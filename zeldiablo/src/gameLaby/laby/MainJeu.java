@@ -3,7 +3,6 @@ package gameLaby.laby;
 import moteurJeu.MoteurJeu;
 
 import java.io.IOException;
-import java.lang.module.ModuleReader;
 
 public class MainJeu {
     public static void main(String[] args) throws IOException {
@@ -18,6 +17,4 @@ public class MainJeu {
 
         MoteurJeu.launch(jeu,dessin);
     }
-
-
 }
