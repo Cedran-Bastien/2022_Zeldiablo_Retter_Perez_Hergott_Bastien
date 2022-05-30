@@ -58,31 +58,35 @@ class Labyrinthe{
      +getCase(int x, int y) : Case
     }
 
-interface Case{
-    + faireEffet()
-    +getX() : int
-    +getY() : int
+abstract Case{
+    - x : int
+    - y : int
+    + abstract faireEffet()
+    + etrePresent()
+    + getX() : int
+    + getY() : int
 }
 
 class CasesDeclencheur{
-    - x : int
-    - y : int
     + faireEffet()
-    +getX() : int
-    +getY() : int
+    + getX() : int
+    + getY() : int
 }
 
 class CasesPiegees{
-    - degats : int
+    + DEGAT : int
+    + faireEffet()
+    + getX() : int
+    + getY() : int
 }
 
 DessinJeu <|.. LabyDessin
 Jeu <|.. LabyJeu
 Labyrinthe "1" --> "1" Perso : +pj
-Labyrinthe "1" --> "*" Case : +case
-LabyDessin ..> LabyJeu : uses
+Labyrinthe "1" -> "*" Case : +case
+LabyDessin .> LabyJeu : uses
 LabyJeu "1" --> "1" Labyrinthe : laby
-Case <|.. CasesDeclencheur
-CasesDeclencheur <|-- CasesPiegees
+Case <|-- CasesDeclencheur
+Case <|-- CasesPiegees
 
 @enduml

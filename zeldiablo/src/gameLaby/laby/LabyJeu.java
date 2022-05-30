@@ -40,6 +40,7 @@ public class LabyJeu implements Jeu {
         if (clavier.bas){
             laby.deplacerPerso(Labyrinthe.BAS);
         }
+
     }
 
 
