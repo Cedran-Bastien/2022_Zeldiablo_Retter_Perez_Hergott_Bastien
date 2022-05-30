@@ -63,6 +63,7 @@ class Labyrinthe{
 abstract Case{
     - x : int
     - y : int
+    + Case(int x, int y)
     + abstract faireEffet()
     + etrePresent(int dx, int dy)
     + getX() : int
@@ -70,12 +71,14 @@ abstract Case{
 }
 
 class CasesDeclencheur{
+    +CasesDeclencheur()
     + faireEffet()
 }
 
 class CasesPiegees{
     + DEGAT : int
     + perso : Perso
+    + CasesPiegees()
     + faireEffet()
 }
 
