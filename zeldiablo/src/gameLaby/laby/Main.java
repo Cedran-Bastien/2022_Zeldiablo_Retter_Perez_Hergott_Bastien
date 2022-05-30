@@ -3,6 +3,7 @@ package gameLaby.laby;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.Pane;
+import moteurJeu.MoteurJeu;
 
 import java.io.IOException;
 
@@ -28,12 +29,10 @@ public class Main {
             System.out.println();
         }
 
-        Canvas canvas = new Canvas();
-        Pane root = new Pane();
-        Scene scene = new Scene(root);
+        // lancement du Jeu
         LabyJeu jeuLaby = new LabyJeu();
         LabyDessin labyDessin = new LabyDessin();
-        labyDessin.dessinerJeu(jeuLaby,canvas);
-        root.getChildren().add(canvas);
+        MoteurJeu.launch(jeuLaby,labyDessin);
+
     }
 }
