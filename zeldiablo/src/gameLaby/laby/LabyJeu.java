@@ -13,10 +13,10 @@ public class LabyJeu implements Jeu {
     /**
      * labirynthe
      */
-    private Labyrinthe labi;
+    private Labyrinthe laby;
 
     public LabyJeu() throws IOException {
-        this.labi = new Labyrinthe("labySimple/laby1.txt");
+        this.laby = new Labyrinthe("labySimple/laby1.txt");
     }
 
     /**
@@ -29,16 +29,16 @@ public class LabyJeu implements Jeu {
 
         //deplacé le personnage en fonction des touches
         if (clavier.droite){
-            labi.deplacerPerso(Labyrinthe.DROITE);
+            laby.deplacerPerso(Labyrinthe.DROITE);
         }
         if (clavier.gauche){
-            labi.deplacerPerso(Labyrinthe.GAUCHE);
+            laby.deplacerPerso(Labyrinthe.GAUCHE);
         }
         if (clavier.haut){
-            labi.deplacerPerso(Labyrinthe.HAUT);
+            laby.deplacerPerso(Labyrinthe.HAUT);
         }
         if (clavier.bas){
-            labi.deplacerPerso(Labyrinthe.BAS);
+            laby.deplacerPerso(Labyrinthe.BAS);
         }
     }
 
@@ -60,6 +60,6 @@ public class LabyJeu implements Jeu {
 
 
     public Labyrinthe getLabi() {
-        return labi;
+        return laby;
     }
 }

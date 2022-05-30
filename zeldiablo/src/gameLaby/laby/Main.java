@@ -3,6 +3,7 @@ package gameLaby.laby;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.Pane;
+import moteurJeu.MoteurJeu;
 
 import java.io.IOException;
 
