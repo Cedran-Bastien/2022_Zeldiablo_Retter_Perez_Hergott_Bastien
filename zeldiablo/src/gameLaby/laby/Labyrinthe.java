@@ -187,7 +187,6 @@ public class Labyrinthe {
 
     /**
      * return mur en (i,j)
-     *
      * @param x
      * @param y
      * @return

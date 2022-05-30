@@ -4,7 +4,7 @@ import moteurJeu.MoteurJeu;
 
 import java.io.IOException;
 
-public class MainLaby {
+public class MainJeu {
     public static void main(String[] args) throws IOException {
         int pFPS = 20;
 
