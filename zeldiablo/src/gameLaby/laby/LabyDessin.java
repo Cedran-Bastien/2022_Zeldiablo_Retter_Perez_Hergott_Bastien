@@ -28,7 +28,7 @@ public class LabyDessin implements DessinJeu {
                     gc.setFill(Color.BLACK);
                     gc.fillRect(j*10,i*10,TAILLE_RECTANGLE, TAILLE_RECTANGLE);
                 }
-                else if (!mur && labyrinthe.getPj().getX()==i && labyrinthe.getPj().getY()==j){
+                else if (!mur && labyrinthe.getPj().etrePresent(i,j)){
                     gc.setFill(Color.RED);
                     gc.fillOval(j*10,i*10,TAILLE_RECTANGLE/2, TAILLE_RECTANGLE/2);
                 }

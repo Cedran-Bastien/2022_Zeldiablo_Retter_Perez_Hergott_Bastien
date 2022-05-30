@@ -29,10 +29,6 @@ public class Main {
             System.out.println();
         }
 
-        // lancement du Jeu
-        LabyJeu jeuLaby = new LabyJeu();
-        LabyDessin labyDessin = new LabyDessin();
-        MoteurJeu.launch(jeuLaby,labyDessin);
 
     }
 }
