@@ -2,6 +2,8 @@ package moteurJeu;
 
 import javafx.scene.canvas.Canvas;
 
+import java.awt.*;
+
 
 /**
  * interface pour afficher le jeu
