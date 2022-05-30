@@ -6,14 +6,15 @@ import java.io.IOException;
 
 public class MainLaby {
     public static void main(String[] args) throws IOException {
-        int pFPS = 100;
+        int pFPS = 20;
 
-        // lancement du Jeu
-        LabyJeu jeuLaby = new LabyJeu();
+        LabyJeu jeu = new LabyJeu();
+        LabyDessin dessin = new LabyDessin();
 
-        LabyDessin labyDessin = new LabyDessin();
         MoteurJeu.setFPS(pFPS);
-        MoteurJeu.launch(jeuLaby, labyDessin);
-        MoteurJeu.setTaille(jeuLaby.getLabi().getLength(),jeuLaby.getLabi().getLengthY());
+        int taille = LabyDessin.TAILLE_RECTANGLE;
+        MoteurJeu.setTaille(jeu.getLabi().getLength() * taille, jeu.getLabi().getLengthY()* taille);
+
+        MoteurJeu.launch(jeu,dessin);
     }
 }
