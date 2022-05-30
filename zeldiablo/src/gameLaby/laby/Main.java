@@ -27,13 +27,5 @@ public class Main {
             // saut de ligne
             System.out.println();
         }
-
-        Canvas canvas = new Canvas();
-        Pane root = new Pane();
-        Scene scene = new Scene(root);
-        LabyJeu jeuLaby = new LabyJeu();
-        LabyDessin labyDessin = new LabyDessin();
-        labyDessin.dessinerJeu(jeuLaby,canvas);
-        root.getChildren().add(canvas);
     }
 }
