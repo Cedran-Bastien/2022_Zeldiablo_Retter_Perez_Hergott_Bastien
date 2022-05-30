@@ -21,8 +21,10 @@ public class LabyDessin implements DessinJeu {
 
         //recuperation du pinceau
         GraphicsContext gc = canvas.getGraphicsContext2D();
-
+        gc.setFill(Color.WHITE);
+        gc.fillRect(0,0,canvas.getWidth(),canvas.getHeight());
         //dessin du labyrinthe
+
         for (int i = 0; i < longueur; i++) {
             for (int j = 0; j < largeur; i++) {
                 boolean mur = labyrinthe.getMur(i, j);
