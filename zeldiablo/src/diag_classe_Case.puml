@@ -30,10 +30,12 @@ class LabyJeu{
     }
 
 class Perso{
+    -pv : int
     -x : int
     -y : int
     +Perso(int dx, int dy)
     +etrePresent(int dx, int dy) : boolean
+    +perdrePv()
     +getX() : int
     +getY() : int
     }
@@ -62,22 +64,19 @@ abstract Case{
     - x : int
     - y : int
     + abstract faireEffet()
-    + etrePresent()
+    + etrePresent(int dx, int dy)
     + getX() : int
     + getY() : int
 }
 
 class CasesDeclencheur{
     + faireEffet()
-    + getX() : int
-    + getY() : int
 }
 
 class CasesPiegees{
     + DEGAT : int
+    + perso : Perso
     + faireEffet()
-    + getX() : int
-    + getY() : int
 }
 
 DessinJeu <|.. LabyDessin
