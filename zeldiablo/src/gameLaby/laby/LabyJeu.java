@@ -50,8 +50,7 @@ public class LabyJeu implements Jeu {
 
     @Override
     public boolean etreFini() {
-        //jamais fini
-        return false;
+        return (this.etreFini());
     }
 
 
