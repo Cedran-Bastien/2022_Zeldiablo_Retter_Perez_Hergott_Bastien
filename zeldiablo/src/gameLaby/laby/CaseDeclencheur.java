@@ -8,6 +8,6 @@ public class CaseDeclencheur extends Case {
 
     @Override
     public void faireEffet() {
-        System.out.println("case declenché");
+        System.out.println("Case déclenchée");
     }
 }

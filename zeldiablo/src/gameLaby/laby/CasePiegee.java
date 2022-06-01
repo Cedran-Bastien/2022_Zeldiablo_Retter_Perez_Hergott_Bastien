@@ -9,7 +9,6 @@ public class CasePiegee extends Case {
         this.perso = p;
     }
 
-
     @Override
     public void faireEffet() {
         this.perso.perdrePV(DEGAT);
