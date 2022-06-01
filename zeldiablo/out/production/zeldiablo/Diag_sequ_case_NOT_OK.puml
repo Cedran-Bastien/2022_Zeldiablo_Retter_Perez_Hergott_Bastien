@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+MainJeu -> Perso : getX()
+activate Perso
+Perso --> MainJeu : x
+deactivate Perso
+
+MainJeu -> Perso : getY()
+activate Perso
+Perso --> MainJeu : Y
+deactivate Perso
+
+MainJeu -> CasePiegees : etrePresent(x,y)
+activate CasePiegees
+CasePiegees --> MainJeu : false
+deactivate CasePiegees
+
+@enduml
