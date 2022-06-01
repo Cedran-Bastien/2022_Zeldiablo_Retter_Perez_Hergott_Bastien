@@ -20,7 +20,6 @@ public class CasePiegee extends CaseEffet {
         this.type=typ;
     }
 
-    @Override
     public void faireEffet() {
         if ( !this.pers.etreMort()){
             this.pers.subirDegats(this.degat);

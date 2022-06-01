@@ -6,6 +6,9 @@ public class CaseDeclencheur extends CaseEffet {
         super(x, y , type , p);
     }
 
+    /**
+     * affiche si la case a été déclenchée
+     */
     public void faireEffet() {
         System.out.println("Case déclenchée");
     }
