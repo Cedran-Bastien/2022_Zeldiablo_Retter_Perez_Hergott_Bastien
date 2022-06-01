@@ -84,6 +84,7 @@ class Labyrinthe{
      +getMur(int x, int y) : boolean
      +getPj() : Perso
      +getMonstres(int pos) : Monstre
+     +getCase(int x, int y) : Case
 
 
     }
