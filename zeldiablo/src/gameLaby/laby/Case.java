@@ -1,25 +1,23 @@
 package gameLaby.laby;
 
-public abstract class Case {
-    int x, y;
+import javax.swing.text.Position;
 
-    public abstract void faireEffet();
+public abstract class Case extends Position {
 
-    public Case(int x, int y) {
-        this.x = x;
-        this.y = y;
+    char type;
+
+    public Case(int x, int y, char t) {
+        super(x,y);
+        this.type = t;
     }
 
-    public boolean etrePresent(int dx, int dy) {
-
-        return (this.x == dx && this.y == dy);
+    /**
+     *
+     * @return type de la case
+     */
+    public char getType() {
+        return this.type;
     }
 
-    public int getX() {
-        return x;
-    }
 
-    public int getY() {
-        return y;
-    }
 }

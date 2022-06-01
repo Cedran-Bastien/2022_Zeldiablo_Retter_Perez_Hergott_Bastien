@@ -1,15 +1,18 @@
 package gameLaby.laby;
 
 
+import javax.swing.text.Position;
+
 /**
  * gere un personnage situe en x,y
  */
-public class Perso {
+public class Perso extends Position {
+
 
     /**
-     * position du personnage
+     * point de vie du personnage
      */
-    int x, y;
+    int pv;
 
     /**
      * constructeur
@@ -17,9 +20,9 @@ public class Perso {
      * @param dx position selon x
      * @param dy position selon y
      */
-    public Perso(int dx, int dy) {
-        this.x = dx;
-        this.y = dy;
+    public Perso(int dx, int dy, int pdv) {
+        super(dx,dy);
+        this.pv = pdv;
     }
 
     /**
@@ -34,23 +37,34 @@ public class Perso {
         return (this.x == dx && this.y == dy);
     }
 
+    /**
+     * permet de retirer au point de vie du personnage des degats donnees
+     */
+    public void subirDegats(int deg) {
+        int vie = this.pv;
+        vie -= deg;
+        if (vie <= 0) {
+            this.pv = 0;
+        } else {
+            this.pv = vie;
+        }
+    }
+
     // ############################################
     // GETTER
     // ############################################
 
     /**
-     * @return position x du personnage
+     * informe l'utilisateur si le personnage n'a plus de pv
      */
-    public int getX() {
-        // getter
-        return this.x;
+    public boolean etreMort() {
+        return this.pv == 0;
     }
 
     /**
-     * @return position y du personnage
+     * renvoie les points de vie du personnage
      */
-    public int getY() {
-        //getter
-        return this.y;
+    public int getPv() {
+        return this.pv;
     }
 }
