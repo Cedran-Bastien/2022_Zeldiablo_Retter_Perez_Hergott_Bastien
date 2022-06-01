@@ -76,7 +76,6 @@ class Labyrinthe{
     +BAS = String
     +GAUCHE : String
     +DROITE : String
-    +murs : boolean[]
     +getSuivant(int x, int y, String action) : int
     +Labyrinthe(String nom)
     +deplacerPerso(String action)
@@ -126,6 +125,7 @@ Case <|.. CaseVide
 Case <|.. CaseMur
 CaseEffet <|.. CaseDeclencheur
 CaseEffet <|.. CasePiegee
+
 
 
 @enduml
