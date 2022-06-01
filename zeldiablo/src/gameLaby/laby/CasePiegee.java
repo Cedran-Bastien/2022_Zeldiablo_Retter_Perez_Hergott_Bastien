@@ -14,8 +14,8 @@ public class CasePiegee extends CaseEffet {
      * @param deg
      * @param typ
      */
-    public CasePiegee(int x, int y, Perso p,int deg,char typ) {
-        super(x, y);
+    public CasePiegee(int x, int y,char typ, Perso p,int deg) {
+        super(x, y, typ);
         this.pers = p;
         this.type=typ;
     }

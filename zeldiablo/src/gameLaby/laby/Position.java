@@ -1,6 +1,6 @@
 package gameLaby.laby;
 
-public abstract class Position {
+public class Position {
     private int x,y;
 
     /**
