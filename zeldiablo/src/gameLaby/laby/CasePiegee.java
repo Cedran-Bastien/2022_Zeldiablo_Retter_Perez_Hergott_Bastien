@@ -1,17 +1,38 @@
 package gameLaby.laby;
 
-public class CasePiegee extends Case {
-    public static final int DEGAT = 10;
-    private Perso perso;
+public class CasePiegee extends CaseEffet {
+    //attributs
+    private int degat;
+    private char type;
+    private Perso pers;
 
-    public CasePiegee(int x, int y, Perso p) {
+    /**
+     * Constructeur de CasePiegee
+     * @param x
+     * @param y
+     * @param p
+     * @param deg
+     * @param typ
+     */
+    public CasePiegee(int x, int y, Perso p,int deg,char typ) {
         super(x, y);
-        this.perso = p;
+        this.pers = p;
+        this.type=typ;
     }
 
 
     @Override
     public void faireEffet() {
-        this.perso.perdrePV(DEGAT);
+        if ( !this.pers.etreMort()){
+            this.pers.subirDegats(this.degat);
+        }
+    }
+
+    /**
+     * permet de savoir les dégâts de la case
+     * @return
+     */
+    public int getDegat() {
+        return degat;
     }
 }
