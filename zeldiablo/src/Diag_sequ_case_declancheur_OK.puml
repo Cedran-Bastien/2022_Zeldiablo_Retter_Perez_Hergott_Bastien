@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+MainJeu -> Perso : getX()
+activate Perso
+Perso --> MainJeu : x
+deactivate Perso
+
+MainJeu -> Perso : getY()
+activate Perso
+Perso --> MainJeu : Y
+deactivate Perso
+
+MainJeu -> CasePiegees : etrePresent(x,y)
+activate CasePiegees
+CasePiegees --> MainJeu : true
+deactivate CasePiegees
+
+MainJeu -> CaseDeclencheur : faireEffet()
+activate CaseDeclencheur
+CaseDeclencheur -> Console : sout("caseDeclencheur declenché")
+activate Console
+Console --> CaseDeclencheur
+deactivate Console
+CaseDeclencheur -->MainJeu
+deactivate CaseDeclencheur
+@enduml
