@@ -2,13 +2,11 @@ package gameLaby.laby;
 
 public abstract class CaseEffet extends Case {
 
-    private Perso pers;
 
-    public CaseEffet (int x, int y,char type, Perso pers) {
+    public CaseEffet (int x, int y,char type) {
         super(x,y,type);
-        this.pers = pers;
     }
 
-    public abstract void faireEffet();
+    public abstract void faireEffet(Perso p);
 
 }

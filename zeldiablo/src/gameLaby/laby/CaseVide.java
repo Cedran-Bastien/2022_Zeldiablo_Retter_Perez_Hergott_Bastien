@@ -1,10 +1,9 @@
 package gameLaby.laby;
 
 public class CaseVide extends Case{
-    public CaseVide(int x, int y) {
-        super(x, y);
+
+    public CaseVide(int x, int y, char p) {
+        super(x, y,p);
     }
 
-    @Override
-    public void faireEffet() {}
 }

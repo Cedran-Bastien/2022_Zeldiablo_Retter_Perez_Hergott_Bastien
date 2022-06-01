@@ -17,6 +17,10 @@ public class Labyrinthe {
     public static final char MUR = 'X';
     public static final char PJ = 'P';
     public static final char VIDE = '.';
+//    public static final char MONSTRE = 'M';
+    public static final char CASEDECLENCHEUR = 'D';
+    public static final char CASEPIEGEE = 'p';
+
 
     /**
      * constantes actions possibles
@@ -32,9 +36,9 @@ public class Labyrinthe {
     public Perso pj;
 
     /**
-     * les murs du labyrinthe
+     * les case du labyrinthe
      */
-    public boolean[][] murs;
+    public Case[][] cases;
 
     /**
      * retourne la case suivante selon une actions
@@ -88,7 +92,7 @@ public class Labyrinthe {
         nbColonnes = Integer.parseInt(bfRead.readLine());
 
         // creation labyrinthe vide
-        this.murs = new boolean[nbColonnes][nbLignes];
+        this.cases = new Case[nbColonnes][nbLignes];
         this.pj = null;
 
         // lecture des cases
@@ -105,17 +109,23 @@ public class Labyrinthe {
                 char c = ligne.charAt(colonne);
                 switch (c) {
                     case MUR:
-                        this.murs[colonne][numeroLigne] = true;
+                        this.cases[colonne][numeroLigne] = new CaseMur(colonne, numeroLigne, Labyrinthe.MUR) ;
                         break;
                     case VIDE:
-                        this.murs[colonne][numeroLigne] = false;
+                        this.cases[colonne][numeroLigne] = new CaseVide(colonne, numeroLigne, Labyrinthe.VIDE);
                         break;
                     case PJ:
                         // pas de mur
-                        this.murs[colonne][numeroLigne] = false;
+                        this.cases[colonne][numeroLigne] = new CaseVide(colonne, numeroLigne, Labyrinthe.VIDE);
                         // ajoute PJ
-                        this.pj = new Perso(colonne, numeroLigne);
+                        this.pj = new Perso(colonne, numeroLigne, 100);
                         break;
+//                    case MONSTRE:
+//                        this.cases[colonne][numeroLigne] = new Monstre(colonne, numeroLigne, Labyrinthe.MONSTRE );
+//                        break;
+                    case CASEDECLENCHEUR:
+                        this.cases[colonne][numeroLigne] = new CaseDeclencheur(colonne, numeroLigne, Labyrinthe.CASEDECLENCHEUR, );
+
 
                     default:
                         throw new Error("caractere inconnu " + c);

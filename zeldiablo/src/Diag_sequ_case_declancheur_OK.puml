@@ -1,27 +1,38 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
-MainJeu -> Perso : getX()
-activate Perso
-Perso --> MainJeu : x
-deactivate Perso
+main -> labyJeu: update(seconde, clavier)
+activate labyJeu
 
-MainJeu -> Perso : getY()
-activate Perso
-Perso --> MainJeu : Y
-deactivate Perso
+labyJeu-> perso : getX()
+activate perso
+perso --> labyJeu : 1
+deactivate perso
 
-MainJeu -> CasePiegees : etrePresent(x,y)
-activate CasePiegees
-CasePiegees --> MainJeu : true
-deactivate CasePiegees
+labyJeu -> perso : getY()
+activate perso
+perso --> labyJeu : 1
+deactivate perso
 
-MainJeu -> CaseDeclencheur : faireEffet()
-activate CaseDeclencheur
-CaseDeclencheur -> Console : sout("caseDeclencheur declenché")
-activate Console
-Console --> CaseDeclencheur
-deactivate Console
-CaseDeclencheur -->MainJeu
-deactivate CaseDeclencheur
+labyJeu -> laby : getCase(1,1)
+activate laby
+laby --> labyJeu :CaseDeclancheur cd
+deactivate laby
+
+labyJeu -> cd : getType()
+activate cd
+cd --> labyJeu : 'D'
+deactivate cd
+
+labyJeu -> cd : faireEffet(perso)
+activate cd
+cd -> terminal : Systeme.out.println("Case déclenchée")
+activate terminal
+terminal --> cd
+deactivate terminal
+cd --> labyJeu
+deactivate cd
+labyJeu --> main
+deactivate labyJeu
+
 @enduml

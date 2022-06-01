@@ -1,7 +1,5 @@
 package gameLaby.laby;
 
-import javax.swing.text.Position;
-
 public abstract class Case extends Position {
 
     char type;

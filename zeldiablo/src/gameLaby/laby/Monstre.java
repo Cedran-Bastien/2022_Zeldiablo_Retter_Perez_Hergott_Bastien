@@ -12,20 +12,19 @@ public class Monstre extends CaseEffet {
      * @param x
      * @param y
      * @param p
-     * @param pers
      * @param ptsAtt
      */
-    public Monstre(int x, int y, char p, Perso pers, int ptsAtt) {
-        super(x,y,p,pers);
+    public Monstre(int x, int y, char p, int ptsAtt) {
+        super(x,y,p);
         this.PointsAttaque = ptsAtt;
     }
 
     /**
      * retire les points d attaque au personnage lorsque celui ci active l'effet
      */
-    public void faireEffet() {
-        if (!this.pers.etreMort()) {
-            this.pers.subirDegats(this.PointsAttaque);
+    public void faireEffet(Perso p) {
+        if (!p.etreMort()) {
+            p.subirDegats(this.PointsAttaque);
         }
     }
 

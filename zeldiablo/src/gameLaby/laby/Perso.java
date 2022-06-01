@@ -1,13 +1,10 @@
 package gameLaby.laby;
 
 
-import javax.swing.text.Position;
-
 /**
  * gere un personnage situe en x,y
  */
 public class Perso extends Position {
-
 
     /**
      * point de vie du personnage
@@ -34,7 +31,7 @@ public class Perso extends Position {
      */
     public boolean etrePresent(int dx, int dy) {
 
-        return (this.x == dx && this.y == dy);
+        return (this.getX() == dx && this.getY() == dy);
     }
 
     /**

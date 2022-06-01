@@ -59,12 +59,12 @@ class Perso {
     +getPv() : int
 }
 
-class Monstre {
-    -PointsAttaque : int
-    +Monstre(int x, int y,char type, int ptsAtt)
-    +faireEffet(Perso p)
-    +getPointsAttaque() : int
-}
+'class Monstre {
+'    -PointsAttaque : int
+'    +Monstre(int x, int y,char type, int ptsAtt)
+'    +faireEffet(Perso p)
+'    +getPointsAttaque() : int
+'}
 
 class Labyrinthe{
     +MUR : char
@@ -115,7 +115,7 @@ DessinJeu <|.. LabyDessin
 Jeu <|.. LabyJeu
 Position <|-- Perso
 Position <|-- Case
-CaseEffet <|-- Monstre
+'CaseEffet <|-- Monstre
 Case <|-- CaseEffet
 Labyrinthe "1" --> "1" Perso : +pj
 Labyrinthe "1" --> "*" Case : +cases

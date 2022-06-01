@@ -1,28 +1,25 @@
 package gameLaby.laby;
 
 public class CasePiegee extends CaseEffet {
+
     //attributs
     private int degat;
-    private char type;
-    private Perso pers;
 
     /**
      * Constructeur de CasePiegee
      * @param x
      * @param y
-     * @param p
      * @param deg
      * @param typ
      */
-    public CasePiegee(int x, int y,char typ, Perso p,int deg) {
+    public CasePiegee(int x, int y,char typ,int deg) {
         super(x, y, typ);
-        this.pers = p;
         this.type=typ;
     }
 
-    public void faireEffet() {
-        if ( !this.pers.etreMort()){
-            this.pers.subirDegats(this.degat);
+    public void faireEffet(Perso p) {
+        if ( !p.etreMort()){
+            p.subirDegats(this.degat);
         }
     }
 

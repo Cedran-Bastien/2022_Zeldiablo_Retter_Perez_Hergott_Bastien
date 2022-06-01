@@ -1,12 +1,9 @@
 package gameLaby.laby;
 
 public class CaseMur extends Case{
-    public CaseMur(int x, int y) {
-        super(x, y);
+
+    public CaseMur(int x, int y, char t) {
+        super(x, y,t);
     }
 
-    @Override
-    public void faireEffet() {
-
-    }
 }
