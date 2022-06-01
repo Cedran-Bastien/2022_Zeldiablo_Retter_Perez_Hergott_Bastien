@@ -29,7 +29,7 @@ class LabyJeu{
     +getLabi : Labyrinthe
     }
 
-interface Position{
+abstract Position{
     -x : int
     -y : int
     +Position(int dx, int dy)
@@ -38,16 +38,16 @@ interface Position{
     +getY() : int
     }
 
-interface Case {
+abstract Case {
     - type : char
-
+    +Case(int x, int y, char type)
     +getType() : char
 
     }
 
-interface CaseEffet {
+abstract CaseEffet {
     -pers : Perso
-    +CaseEffet(int x, int y, Perso p)
+    +CaseEffet(int x, int y,char type, Perso p)
     +faireEffet()
 
 }
@@ -62,9 +62,10 @@ class Perso {
 
 class Monstre {
     -PointsAttaque : int
-    +Monstre(int x, int y, Perso p, int ptsAtt)
+    -type : char
+    +Monstre(int x, int y,char type, Perso p, int ptsAtt)
     +faireEffet()
-    +getPointsAttaque()
+    +getPointsAttaque() : int
 }
 
 class Labyrinthe{
@@ -103,8 +104,9 @@ class CaseDeclencheur {
 }
 
 class CasePiegee {
+    -type : char
     -degats : int
-    +CasePiegee(int x, int y, Perso p, int deg)
+    +CasePiegee(int x, int y,char type,Perso p, int deg)
     +faireEffet()
     +getDegats() : int
 
@@ -113,18 +115,18 @@ class CasePiegee {
 
 DessinJeu <|.. LabyDessin
 Jeu <|.. LabyJeu
-Position <|.. Perso
-Position <|.. Case
-CaseEffet <|.. Monstre
-Case <|.. CaseEffet
+Position <|-- Perso
+Position <|-- Case
+CaseEffet <|-- Monstre
+Case <|-- CaseEffet
 Labyrinthe "1" --> "1" Perso : +pj
 Labyrinthe "1" --> "*" Case : +cases
 LabyDessin ..> LabyJeu : uses
 LabyJeu "1" --> "1" Labyrinthe : laby
-Case <|.. CaseVide
-Case <|.. CaseMur
-CaseEffet <|.. CaseDeclencheur
-CaseEffet <|.. CasePiegee
+Case <|-- CaseVide
+Case <|-- CaseMur
+CaseEffet <|-- CaseDeclencheur
+CaseEffet <|-- CasePiegee
 
 
 
