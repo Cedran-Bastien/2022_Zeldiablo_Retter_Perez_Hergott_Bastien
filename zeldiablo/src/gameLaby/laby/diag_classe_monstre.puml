@@ -1,0 +1,131 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+title Diagramme gameLaby
+
+interface Jeu {
+    +update(double secondes, Clavier clavier)
+    +init()
+    +etreFini()
+    }
+
+interface DessinJeu {
+    +dessinerJeu (Jeu jeu, Canvas canvas)
+    }
+
+
+
+class LabyDessin{
+    +TAILLE_RECTANGLE : int
+    +dessinerJeu(Jeu jeu, Canvas canvas)
+}
+
+class LabyJeu{
+    -laby : Labyrinthe
+    +LabyJeu()
+    +update(double secondes, Clavier clavier)
+    +init
+    +etreFini : boolean
+    +getLabi : Labyrinthe
+    }
+
+interface Position{
+    -x : int
+    -y : int
+    +Position(int dx, int dy)
+    +etrePresent(int dx, int dy) : boolean
+    +getX() : int
+    +getY() : int
+    }
+
+interface Case {
+    - type : char
+
+    +getType() : char
+
+    }
+
+interface CaseEffet {
+    -pers : Perso
+    +CaseEffet(int x, int y, Perso p)
+    +faireEffet()
+
+}
+
+class Perso {
+    -pv : int
+    +Perso(int x, int y, int pv)
+    +subirDegats(int deg)
+    +etreMort() : boolean
+    +getPv() : int
+}
+
+class Monstre {
+    -PointsAttaque : int
+    +Monstre(int x, int y, Perso p, int ptsAtt)
+    +faireEffet()
+    +getPointsAttaque()
+}
+
+class Labyrinthe{
+    +MUR : char
+    +PJ : char
+    +MON = char
+    +VIDE : char
+    +HAUT = String
+    +BAS = String
+    +GAUCHE : String
+    +DROITE : String
+    +murs : boolean[]
+    +getSuivant(int x, int y, String action) : int
+    +Labyrinthe(String nom)
+    +deplacerPerso(String action)
+    +etreFini() : boolean
+     +getLengthY() : int
+     +getLength() : int
+     +getMur(int x, int y) : boolean
+     +getPj() : Perso
+     +getMonstres(int pos) : Monstre
+
+
+    }
+
+class CaseVide {
+
+}
+
+class CaseMur {
+
+}
+
+class CaseDeclencheur {
+    +faireEffet()
+
+}
+
+class CasePiegee {
+    -degats : int
+    +CasePiegee(int x, int y, Perso p, int deg)
+    +faireEffet()
+    +getDegats() : int
+
+}
+
+
+DessinJeu <|.. LabyDessin
+Jeu <|.. LabyJeu
+Position <|.. Perso
+Position <|.. Case
+CaseEffet <|.. Monstre
+Case <|.. CaseEffet
+Labyrinthe "1" --> "1" Perso : +pj
+Labyrinthe "1" --> "*" Case : +cases
+LabyDessin ..> LabyJeu : uses
+LabyJeu "1" --> "1" Labyrinthe : laby
+Case <|.. CaseVide
+Case <|.. CaseMur
+CaseEffet <|.. CaseDeclencheur
+CaseEffet <|.. CasePiegee
+
+
+@enduml
