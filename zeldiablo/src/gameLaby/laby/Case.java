@@ -11,6 +11,10 @@ public abstract class Case extends Position {
         this.type = t;
     }
 
+    /**
+     *
+     * @return type de la case
+     */
     public char getType() {
         return this.type;
     }

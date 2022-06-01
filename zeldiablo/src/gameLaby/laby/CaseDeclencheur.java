@@ -6,7 +6,9 @@ public class CaseDeclencheur extends Case {
         super(x, y);
     }
 
-    @Override
+    /**
+     * affiche si la case a été déclenchée
+     */
     public void faireEffet() {
         System.out.println("Case déclenchée");
     }
