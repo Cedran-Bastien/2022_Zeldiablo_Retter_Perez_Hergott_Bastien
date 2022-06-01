@@ -13,8 +13,8 @@ public class MainJeu {
 
         MoteurJeu.setFPS(pFPS);
         int taille = LabyDessin.TAILLE_RECTANGLE;
-        MoteurJeu.setTaille(jeu.getLabi().getLength() * taille, jeu.getLabi().getLengthY()* taille);
+        MoteurJeu.setTaille(jeu.getLabi().getLength() * taille, jeu.getLabi().getLengthY() * taille);
 
-        MoteurJeu.launch(jeu,dessin);
+        MoteurJeu.launch(jeu, dessin);
     }
 }

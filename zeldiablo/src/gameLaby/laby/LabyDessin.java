@@ -12,7 +12,7 @@ public class LabyDessin implements DessinJeu {
     @Override
     public void dessinerJeu(Jeu jeu, Canvas canvas) {
         //recuperation du labyrinthe
-        Labyrinthe labyrinthe = ((LabyJeu)(jeu)).getLabi();
+        Labyrinthe labyrinthe = ((LabyJeu) (jeu)).getLabi();
         //taille
         int longueur = labyrinthe.getLength();
         int largeur = labyrinthe.getLengthY();
@@ -20,18 +20,17 @@ public class LabyDessin implements DessinJeu {
         //recuperation du pinceau
         GraphicsContext gc = canvas.getGraphicsContext2D();
         gc.setFill(Color.WHITE);
-        gc.fillRect(0,0,canvas.getWidth(),canvas.getHeight());
+        gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
         //dessin du labyrinthe
-        for (int i = 0; i<longueur;i++){
-            for (int j = 0; j<largeur;j++){
-                boolean mur = labyrinthe.getMur(i,j);
-                if (mur){
+        for (int i = 0; i < longueur; i++) {
+            for (int j = 0; j < largeur; j++) {
+                boolean mur = labyrinthe.getMur(i, j);
+                if (mur) {
                     gc.setFill(Color.BLACK);
-                    gc.fillRect(i*TAILLE_RECTANGLE,j*TAILLE_RECTANGLE,TAILLE_RECTANGLE, TAILLE_RECTANGLE);
-                }
-                else if (!mur && labyrinthe.getPj().etrePresent(i,j)){
+                    gc.fillRect(i * TAILLE_RECTANGLE, j * TAILLE_RECTANGLE, TAILLE_RECTANGLE, TAILLE_RECTANGLE);
+                } else if (!mur && labyrinthe.getPj().etrePresent(i, j)) {
                     gc.setFill(Color.RED);
-                    gc.fillOval(i*TAILLE_RECTANGLE,j*TAILLE_RECTANGLE,TAILLE_RECTANGLE, TAILLE_RECTANGLE);
+                    gc.fillOval(i * TAILLE_RECTANGLE, j * TAILLE_RECTANGLE, TAILLE_RECTANGLE, TAILLE_RECTANGLE);
                 }
             }
         }
