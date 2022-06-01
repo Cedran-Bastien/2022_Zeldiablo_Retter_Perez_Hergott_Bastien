@@ -1,12 +1,12 @@
 package gameLaby.laby;
 
-public class CasePiegee extends Case{
-    public static final int DEGAT=10;
+public class CasePiegee extends Case {
+    public static final int DEGAT = 10;
     private Perso perso;
 
-    public CasePiegee(int x, int y,Perso p) {
+    public CasePiegee(int x, int y, Perso p) {
         super(x, y);
-        this.perso=p;
+        this.perso = p;
     }
 
 

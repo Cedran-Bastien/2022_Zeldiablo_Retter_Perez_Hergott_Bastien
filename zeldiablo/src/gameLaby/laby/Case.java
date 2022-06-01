@@ -1,13 +1,13 @@
 package gameLaby.laby;
 
 public abstract class Case {
-    int x,y;
+    int x, y;
 
     public abstract void faireEffet();
 
-    public Case(int x, int y){
-        this.x=x;
-        this.y=y;
+    public Case(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     public boolean etrePresent(int dx, int dy) {
