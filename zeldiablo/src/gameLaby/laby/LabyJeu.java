@@ -16,7 +16,7 @@ public class LabyJeu implements Jeu {
     private Labyrinthe laby;
 
     public LabyJeu() throws IOException {
-        this.laby = new Labyrinthe("labySimple/laby1.txt");
+        this.laby = new Labyrinthe("labySimple/laby2.txt");
     }
 
     /**
@@ -40,6 +40,7 @@ public class LabyJeu implements Jeu {
         if (clavier.bas){
             laby.deplacerPerso(Labyrinthe.BAS);
         }
+       this.laby.getCase(this.laby.pj.getX(),this.laby.pj.getY()).faireEffet(this.laby.pj);
 
     }
 

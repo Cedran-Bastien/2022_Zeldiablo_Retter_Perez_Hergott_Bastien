@@ -20,7 +20,7 @@ public class Main {
         for (int y = 0; y < laby.getLengthY(); y++) {
             // affiche la ligne
             for (int x = 0; x < laby.getLength(); x++) {
-                if (laby.getMur(x, y))
+                if (laby.getCase(x, y).getType() == 'X')
                     System.out.print('X');
                 else
                     System.out.print('.');

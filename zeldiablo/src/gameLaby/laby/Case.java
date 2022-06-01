@@ -17,5 +17,9 @@ public abstract class Case extends Position {
         return this.type;
     }
 
+    public void faireEffet(Perso p) {
+
+    }
+
 
 }

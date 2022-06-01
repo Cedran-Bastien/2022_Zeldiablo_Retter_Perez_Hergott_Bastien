@@ -6,4 +6,5 @@ public class CaseMur extends Case{
         super(x, y,t);
     }
 
+
 }

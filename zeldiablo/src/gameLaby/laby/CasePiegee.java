@@ -1,6 +1,6 @@
 package gameLaby.laby;
 
-public class CasePiegee extends CaseEffet {
+public class CasePiegee extends Case {
 
     //attributs
     private int degat;
@@ -14,13 +14,14 @@ public class CasePiegee extends CaseEffet {
      */
     public CasePiegee(int x, int y,char typ,int deg) {
         super(x, y, typ);
-        this.type=typ;
+        this.degat=deg;
     }
 
     public void faireEffet(Perso p) {
         if ( !p.etreMort()){
             p.subirDegats(this.degat);
         }
+        System.out.println(p.pv);
     }
 
     /**

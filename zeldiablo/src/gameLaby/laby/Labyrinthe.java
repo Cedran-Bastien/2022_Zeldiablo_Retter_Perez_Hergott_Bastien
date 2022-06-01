@@ -124,8 +124,11 @@ public class Labyrinthe {
 //                        this.cases[colonne][numeroLigne] = new Monstre(colonne, numeroLigne, Labyrinthe.MONSTRE );
 //                        break;
                     case CASEDECLENCHEUR:
-                        this.cases[colonne][numeroLigne] = new CaseDeclencheur(colonne, numeroLigne, Labyrinthe.CASEDECLENCHEUR, );
-
+                        this.cases[colonne][numeroLigne] = new CaseDeclencheur(colonne, numeroLigne, Labyrinthe.CASEDECLENCHEUR);
+                        break;
+                    case CASEPIEGEE:
+                        this.cases[colonne][numeroLigne] = new CasePiegee(colonne, numeroLigne, Labyrinthe.CASEPIEGEE, 20);
+                        break;
 
                     default:
                         throw new Error("caractere inconnu " + c);
@@ -150,16 +153,16 @@ public class Labyrinthe {
      */
     public void deplacerPerso(String action) {
         // case courante
-        int[] courante = {this.pj.x, this.pj.y};
+        int[] courante = {this.pj.getX(), this.pj.getY()};
 
         // calcule case suivante
         int[] suivante = getSuivant(courante[0], courante[1], action);
 
         // si c'est pas un mur, on effectue le deplacement
-        if (!this.murs[suivante[0]][suivante[1]]) {
+        if (this.cases[suivante[0]][suivante[1]].getType() != MUR) {
             // on met a jour personnage
-            this.pj.x = suivante[0];
-            this.pj.y = suivante[1];
+            this.pj.setX(suivante[0]);
+            this.pj.setY(suivante[1]);
         }
     }
 
@@ -183,7 +186,7 @@ public class Labyrinthe {
      * @return
      */
     public int getLengthY() {
-        return murs[0].length;
+        return cases[0].length;
     }
 
     /**
@@ -192,7 +195,7 @@ public class Labyrinthe {
      * @return
      */
     public int getLength() {
-        return murs.length;
+        return cases.length;
     }
 
     /**
@@ -202,9 +205,9 @@ public class Labyrinthe {
      * @param y
      * @return
      */
-    public boolean getMur(int x, int y) {
+    public Case getCase(int x, int y) {
         // utilise le tableau de boolean
-        return this.murs[x][y];
+        return this.cases[x][y];
     }
 
     public Perso getPj() {

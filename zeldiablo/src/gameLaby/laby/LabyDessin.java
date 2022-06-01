@@ -24,14 +24,22 @@ public class LabyDessin implements DessinJeu {
         //dessin du labyrinthe
         for (int i = 0; i < longueur; i++) {
             for (int j = 0; j < largeur; j++) {
-                boolean mur = labyrinthe.getMur(i, j);
-                if (mur) {
+                Case c = labyrinthe.getCase(i, j);
+                if (c.getType() == Labyrinthe.MUR) {
                     gc.setFill(Color.BLACK);
                     gc.fillRect(i * TAILLE_RECTANGLE, j * TAILLE_RECTANGLE, TAILLE_RECTANGLE, TAILLE_RECTANGLE);
-                } else if (!mur && labyrinthe.getPj().etrePresent(i, j)) {
-                    gc.setFill(Color.RED);
-                    gc.fillOval(i * TAILLE_RECTANGLE, j * TAILLE_RECTANGLE, TAILLE_RECTANGLE, TAILLE_RECTANGLE);
+                } else {
+                        if (c.getType() != Labyrinthe.MUR && labyrinthe.getPj().etrePresent(i, j)) {
+                            gc.setFill(Color.RED);
+                            gc.fillOval(i * TAILLE_RECTANGLE, j * TAILLE_RECTANGLE, TAILLE_RECTANGLE, TAILLE_RECTANGLE);
+                        }else {
+                            if (c.getType() == Labyrinthe.CASEPIEGEE) {
+                        gc.setFill(Color.BEIGE);
+                        gc.fillRect(i * TAILLE_RECTANGLE, j * TAILLE_RECTANGLE, TAILLE_RECTANGLE, TAILLE_RECTANGLE);
+                    }
+                    }
                 }
+
             }
         }
     }

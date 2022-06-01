@@ -1,6 +1,6 @@
 package gameLaby.laby;
 
-public class CaseDeclencheur extends CaseEffet {
+public class CaseDeclencheur extends Case {
 
     public CaseDeclencheur(int x, int y, char type) {
         super(x, y , type);
