@@ -29,7 +29,7 @@ class LabyJeu{
     +getLabi : Labyrinthe
     }
 
-abstract Position{
+class Position{
     -x : int
     -y : int
     +Position(int dx, int dy)
@@ -46,9 +46,8 @@ abstract Case {
     }
 
 abstract CaseEffet {
-    -pers : Perso
-    +CaseEffet(int x, int y,char type, Perso p)
-    +faireEffet()
+    +CaseEffet(int x, int y,char type)
+    +faireEffet(Perso p)
 
 }
 
@@ -62,9 +61,8 @@ class Perso {
 
 class Monstre {
     -PointsAttaque : int
-    -type : char
-    +Monstre(int x, int y,char type, Perso p, int ptsAtt)
-    +faireEffet()
+    +Monstre(int x, int y,char type, int ptsAtt)
+    +faireEffet(Perso p)
     +getPointsAttaque() : int
 }
 
@@ -99,15 +97,14 @@ class CaseMur {
 }
 
 class CaseDeclencheur {
-    +faireEffet()
+    +faireEffet(Perso p)
 
 }
 
 class CasePiegee {
-    -type : char
     -degats : int
-    +CasePiegee(int x, int y,char type,Perso p, int deg)
-    +faireEffet()
+    +CasePiegee(int x, int y,char type,int deg)
+    +faireEffet(Perso p)
     +getDegats() : int
 
 }
