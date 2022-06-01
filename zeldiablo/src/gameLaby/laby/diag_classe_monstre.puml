@@ -36,20 +36,18 @@ class Position{
     +etrePresent(int dx, int dy) : boolean
     +getX() : int
     +getY() : int
+    +setX()
+    +setY()
     }
 
 abstract Case {
     - type : char
     +Case(int x, int y, char type)
+    +faireEffet(Perso p)
     +getType() : char
 
     }
 
-abstract CaseEffet {
-    +CaseEffet(int x, int y,char type)
-    +faireEffet(Perso p)
-
-}
 
 class Perso {
     -pv : int
@@ -90,15 +88,21 @@ class Labyrinthe{
     }
 
 class CaseVide {
-
+    +CaseVide(int x, int y, char p)
+    +getTtype() : char
+    +faireEffet(Perso p)
 }
 
 class CaseMur {
-
+    +CaseMur(int x, int y, char t)
+    +getTtype() : char
+    +faireEffet(Perso p)
 }
 
 class CaseDeclencheur {
+    +CaseDeclencheur(int x, int y, char t)
     +faireEffet(Perso p)
+    +getTtype() : char
 
 }
 
@@ -107,6 +111,7 @@ class CasePiegee {
     +CasePiegee(int x, int y,char type,int deg)
     +faireEffet(Perso p)
     +getDegats() : int
+    +getTtype() : char
 
 }
 
@@ -116,16 +121,14 @@ Jeu <|.. LabyJeu
 Position <|-- Perso
 Position <|-- Case
 'CaseEffet <|-- Monstre
-Case <|-- CaseEffet
 Labyrinthe "1" --> "1" Perso : +pj
 Labyrinthe "1" --> "*" Case : +cases
 LabyDessin ..> LabyJeu : uses
 LabyJeu "1" --> "1" Labyrinthe : laby
 Case <|-- CaseVide
 Case <|-- CaseMur
-CaseEffet <|-- CaseDeclencheur
-CaseEffet <|-- CasePiegee
-
+Case <|-- CasePiegee
+Case <|-- CaseDeclencheur
 
 
 @enduml
