@@ -33,7 +33,7 @@ class Position{
     -x : int
     -y : int
     +Position(int dx, int dy)
-    +etrePresent(int dx, int dy) : boolean
+    +etrePresent(Position p) : boolean
     +getX() : int
     +getY() : int
     +setX()
@@ -41,13 +41,13 @@ class Position{
     }
 
 abstract Case {
-    - traversable : boolean
-    - amorce : boolean
-    +Case(int x, int y)
+    + TYPE : char
+    + TRAVERSABLE : boolean
+    +Case(int x, int y, char type)
     +faireEffet(Perso p)
+    +getType() : char
     +isTraversable()
-    +isAmorce()
-    +changerAmorce()
+
     }
 
 
@@ -59,17 +59,22 @@ class Perso {
     +getPv() : int
 }
 
+'class Monstre {
+'    -PointsAttaque : int
+'    +Monstre(int x, int y,char type, int ptsAtt)
+'    +faireEffet(Perso p)
+'    +getPointsAttaque() : int
+'}
+
 class Labyrinthe{
     +MUR : char
     +PJ : char
-    +DECLENCHEUR : char
-    +PIEGEE : char
+    +MON = char
     +VIDE : char
     +HAUT = String
     +BAS = String
     +GAUCHE : String
     +DROITE : String
-    -caseEffet : List<Case>
     +getSuivant(int x, int y, String action) : int
     +Labyrinthe(String nom)
     +deplacerPerso(String action)
@@ -80,31 +85,35 @@ class Labyrinthe{
      +getPj() : Perso
      +getMonstres(int pos) : Monstre
      +getCase(int x, int y) : Case
-     +getCeseEffet();
+
+
     }
 
 class CaseVide {
-    +CaseVide(int x, int y)
+    +CaseVide(int x, int y, char p)
+    +getTtype() : char
     +faireEffet(Perso p)
 }
 
 class CaseMur {
-    +CaseMur(int x, int y)
+    +CaseMur(int x, int y, char t)
+    +getTtype() : char
     +faireEffet(Perso p)
 }
 
 class CaseDeclencheur {
-    +CaseDeclencheur(int x, int y)
+    +CaseDeclencheur(int x, int y, char t)
     +faireEffet(Perso p)
-
+    +getTtype() : char
 
 }
 
 class CasePiegee {
     -degats : int
-    +CasePiegee(int x, int y, boolean amorce)
+    +CasePiegee(int x, int y,char type,int deg)
     +faireEffet(Perso p)
-
+    +getDegats() : int
+    +getTtype() : char
 
 }
 
@@ -113,6 +122,7 @@ DessinJeu <|.. LabyDessin
 Jeu <|.. LabyJeu
 Position <|-- Perso
 Position <|-- Case
+'CaseEffet <|-- Monstre
 Labyrinthe "1" --> "1" Perso : +pj
 Labyrinthe "1" --> "*" Case : +cases
 LabyDessin ..> LabyJeu : uses

@@ -1,4 +1,6 @@
-package gameLaby.laby;
+package gameLaby.laby.caseEffet;
+
+import gameLaby.laby.Perso;
 
 public class CasePiegee extends Case {
 
@@ -13,7 +15,7 @@ public class CasePiegee extends Case {
      * @param typ
      */
     public CasePiegee(int x, int y,char typ,int deg) {
-        super(x, y, typ);
+        super(x, y);
         this.degat=deg;
     }
 
@@ -21,11 +23,11 @@ public class CasePiegee extends Case {
         if ( !p.etreMort()){
             p.subirDegats(this.degat);
         }
-        System.out.println(p.pv);
+        System.out.println(p.getPv());
     }
 
     /**
-     * permet de savoir les dégâts de la case
+     * permet de savoir les dégâts de la gameLaby.laby.case
      * @return
      */
     public int getDegat() {

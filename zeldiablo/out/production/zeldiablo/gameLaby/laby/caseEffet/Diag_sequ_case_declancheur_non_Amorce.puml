@@ -16,23 +16,14 @@ deactivate perso
 
 labyJeu -> laby : getCase(1,1)
 activate laby
-laby --> labyJeu :CaseDeclancheur cd
+laby --> labyJeu :CaseDeclancheur casedeclancheur
 deactivate laby
 
-labyJeu -> cd : getType()
-activate cd
-cd --> labyJeu : 'D'
-deactivate cd
+labyJeu ->casedeclancheur : isAmorce()
+activate casedeclancheur
+casedeclancheur --> labyJeu : false
+deactivate casedeclancheur
 
-labyJeu -> cd : faireEffet(perso)
-activate cd
-cd -> terminal : Systeme.out.println("Case déclenchée")
-activate terminal
-terminal --> cd
-deactivate terminal
-cd --> labyJeu
-deactivate cd
 labyJeu --> main
 deactivate labyJeu
-
 @enduml

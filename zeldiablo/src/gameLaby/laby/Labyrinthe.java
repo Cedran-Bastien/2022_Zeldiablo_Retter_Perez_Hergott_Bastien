@@ -1,8 +1,11 @@
 package gameLaby.laby;
 
+import gameLaby.laby.caseEffet.*;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * classe labyrinthe. represente un labyrinthe avec
@@ -17,7 +20,6 @@ public class Labyrinthe {
     public static final char MUR = 'X';
     public static final char PJ = 'P';
     public static final char VIDE = '.';
-//    public static final char MONSTRE = 'M';
     public static final char CASEDECLENCHEUR = 'D';
     public static final char CASEPIEGEE = 'p';
 
@@ -31,22 +33,33 @@ public class Labyrinthe {
     public static final String DROITE = "Droite";
 
     /**
+     * constante perso
+     */
+    public static final int PV_BASE_PERSO = 100;
+
+    /**
      * attribut du personnage
      */
     public Perso pj;
 
-    /**
-     * les case du labyrinthe
-     */
-    public Case[][] cases;
 
     /**
-     * retourne la case suivante selon une actions
+     * les cases a effet du labirynthe
+     */
+    private ArrayList<Case> caseEffet;
+
+    /**
+     * representation des cases du labyrinthe
+     */
+    private Case[][] cases;
+
+    /**
+     * retourne la gameLaby.laby.case suivante selon une actions
      *
-     * @param x      case depart
-     * @param y      case depart
+     * @param x      gameLaby.laby.case depart
+     * @param y      gameLaby.laby.case depart
      * @param action action effectuee
-     * @return case suivante
+     * @return gameLaby.laby.case suivante
      */
     static int[] getSuivant(int x, int y, String action) {
         switch (action) {
@@ -81,6 +94,8 @@ public class Labyrinthe {
      * @throws IOException probleme a la lecture / ouverture
      */
     public Labyrinthe(String nom) throws IOException {
+        //cree la liste de case a effet
+        caseEffet = new ArrayList<Case>();
         // ouvrir fichier
         FileReader fichier = new FileReader(nom);
         BufferedReader bfRead = new BufferedReader(fichier);
@@ -109,25 +124,26 @@ public class Labyrinthe {
                 char c = ligne.charAt(colonne);
                 switch (c) {
                     case MUR:
-                        this.cases[colonne][numeroLigne] = new CaseMur(colonne, numeroLigne, Labyrinthe.MUR) ;
+                        this.cases[colonne][numeroLigne] = new CaseMur(colonne, numeroLigne) ;
                         break;
                     case VIDE:
-                        this.cases[colonne][numeroLigne] = new CaseVide(colonne, numeroLigne, Labyrinthe.VIDE);
+                        this.cases[colonne][numeroLigne] = new CaseVide(colonne, numeroLigne);
                         break;
                     case PJ:
                         // pas de mur
-                        this.cases[colonne][numeroLigne] = new CaseVide(colonne, numeroLigne, Labyrinthe.VIDE);
+                        this.cases[colonne][numeroLigne] = new CaseVide(colonne, numeroLigne);
                         // ajoute PJ
-                        this.pj = new Perso(colonne, numeroLigne, 100);
+                        this.pj = new Perso(colonne, numeroLigne, Labyrinthe.PV_BASE_PERSO);
                         break;
-//                    case MONSTRE:
-//                        this.cases[colonne][numeroLigne] = new Monstre(colonne, numeroLigne, Labyrinthe.MONSTRE );
-//                        break;
                     case CASEDECLENCHEUR:
-                        this.cases[colonne][numeroLigne] = new CaseDeclencheur(colonne, numeroLigne, Labyrinthe.CASEDECLENCHEUR);
+                        CaseDeclencheur caseDeclencheur = new CaseDeclencheur(colonne, numeroLigne, Labyrinthe.CASEDECLENCHEUR);
+                        this.cases[colonne][numeroLigne] = caseDeclencheur;
+                        this.caseEffet.add(caseDeclencheur);
                         break;
                     case CASEPIEGEE:
-                        this.cases[colonne][numeroLigne] = new CasePiegee(colonne, numeroLigne, Labyrinthe.CASEPIEGEE, 20);
+                        CasePiegee casePiegee = new CasePiegee(colonne, numeroLigne, Labyrinthe.CASEPIEGEE, 20);
+                        this.cases[colonne][numeroLigne] = casePiegee;
+                        this.caseEffet.add(casePiegee);
                         break;
 
                     default:
@@ -210,7 +226,30 @@ public class Labyrinthe {
         return this.cases[x][y];
     }
 
+    /**
+     *
+     * @return
+     *      le personnage du labirynthe
+     */
     public Perso getPj() {
         return pj;
+    }
+
+    /**
+     *
+     * @return
+     *      la repreentation du labirynthe
+     */
+    public Case[][] getCases() {
+        return cases;
+    }
+
+    /**
+     *
+     * @return
+     *      la liste de case a effet
+     */
+    public ArrayList<Case> getCaseEffet() {
+        return caseEffet;
     }
 }

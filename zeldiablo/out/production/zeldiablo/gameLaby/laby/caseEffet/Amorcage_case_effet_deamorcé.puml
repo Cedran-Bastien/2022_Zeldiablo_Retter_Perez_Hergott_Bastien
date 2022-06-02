@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+main -> labyJeu : update(seconde, clavier)
+activate labyJeu
+
+labyJeu -> laby : getCaseEffet()
+activate laby
+laby --> labyJeu : list<Case> case
+deactivate laby
+
+labyJeu -> i : new int(1)
+
+loop
+labyJeu -> case : get(i)
+activate case
+case --> labyJeu : caseAct
+deactivate case
+
+labyJeu -> caseAct : isAmorce()
+activate caseAct
+caseAct --> labyJeu : false
+deactivate caseAct
+
+labyJeu -> caseAct : changerAmorce()
+activate caseAct
+caseAct --> labyJeu
+deactivate caseAct
+end
+
+labyJeu -->main
+deactivate labyJeu
+@enduml

@@ -1,6 +1,8 @@
 package gameLaby.laby;
 
 
+import gameLaby.laby.caseEffet.Position;
+
 /**
  * gere un personnage situe en x,y
  */
@@ -9,7 +11,7 @@ public class Perso extends Position {
     /**
      * point de vie du personnage
      */
-    int pv;
+    private int pv;
 
     /**
      * constructeur
@@ -20,18 +22,6 @@ public class Perso extends Position {
     public Perso(int dx, int dy, int pdv) {
         super(dx,dy);
         this.pv = pdv;
-    }
-
-    /**
-     * permet de savoir si le personnage est en x,y
-     *
-     * @param dx position testee
-     * @param dy position testee
-     * @return true si le personnage est bien en (dx,dy)
-     */
-    public boolean etrePresent(int dx, int dy) {
-
-        return (this.getX() == dx && this.getY() == dy);
     }
 
     /**
@@ -55,13 +45,13 @@ public class Perso extends Position {
      * informe l'utilisateur si le personnage n'a plus de pv
      */
     public boolean etreMort() {
-        return this.pv == 0;
+        return (this.pv == 0);
     }
 
     /**
      * renvoie les points de vie du personnage
      */
     public int getPv() {
-        return this.pv;
+        return (this.pv);
     }
 }

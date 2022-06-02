@@ -1,4 +1,6 @@
-package gameLaby.laby;
+package gameLaby.laby.caseEffet;
+
+import gameLaby.laby.Perso;
 
 public class Position {
     private int x,y;
@@ -14,13 +16,13 @@ public class Position {
     }
 
     /**
-     * permet de savoir si un objet est à une position donnée
-     * @param dx
-     * @param dy
+     * permet de savoir si deux objet sont a une meme position
+     * @param p
      * @return
+     *      true si la position en parametre et la position this sont au meme endroit
      */
-    public boolean etrePresent(int dx,int dy){
-        return (this.x == dx && this.y == dy);
+    public boolean etrePresent(Position p ){
+        return (this.x == p.getX() && this.y == p.getY());
     }
 
     /**
@@ -39,10 +41,18 @@ public class Position {
         return y;
     }
 
+    /**
+     * setter de x
+     * @param x
+     */
     public void setX(int x) {
         this.x = x;
     }
 
+    /**
+     * setter de y
+     * @param y
+     */
     public void setY(int y) {
         this.y = y;
     }

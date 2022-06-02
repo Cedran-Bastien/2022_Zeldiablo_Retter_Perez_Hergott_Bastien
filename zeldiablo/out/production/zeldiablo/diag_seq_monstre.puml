@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+participant "MainJeu" as m
+participant "Labyrinthe" as lab
+participant "Monstre" as mon
+participant "Perso" as p
+
+m -> lab : getMonstre(0)
+m <-- lab : Monstre m
+m -> mon : m.getPointsAttaque()
+m <-- mon : 40
+m -> mon : m.etrePresent(2,4)
+m <-- mon : true
+m -> lab : getPj()
+m <-- lab : Perso p
+m -> Perso : p.getPv()
+m <-- Perso : 100
+m -> p : p.etrePresent(2,3)
+m <-- p : true
+m -> lab : deplacerPerso(Labyrinthe.BAS)
+m <-- lab
+m -> lab : getPj()
+m <-- lab : p
+m -> p : p.getPv()
+lab -> p : getPv()
+m <-- p : 60
+
+
+
+
+@enduml
