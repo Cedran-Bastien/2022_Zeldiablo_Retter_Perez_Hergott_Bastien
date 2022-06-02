@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+main -> labyJeu: update(seconde, clavier)
+activate labyJeu
+
+labyJeu-> perso : getX()
+activate perso
+perso --> labyJeu : 1
+deactivate perso
+
+labyJeu -> perso : getY()
+activate perso
+perso --> labyJeu : 1
+deactivate perso
+
+labyJeu -> laby : getCase(1,1)
+activate laby
+laby --> labyJeu :CaseDeclancheur casedeclancheur
+deactivate laby
+
+labyJeu ->casedeclancheur : isAmorce()
+activate casedeclancheur
+casedeclancheur --> labyJeu : false
+deactivate casedeclancheur
+
+labyJeu --> main
+deactivate labyJeu
+@enduml

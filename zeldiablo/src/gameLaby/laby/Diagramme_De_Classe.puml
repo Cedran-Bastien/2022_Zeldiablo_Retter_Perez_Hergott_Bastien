@@ -41,8 +41,8 @@ class Position{
     }
 
 abstract Case {
-    + TRAVERSABLE : boolean
-    + AMORCE : boolean
+    - traversable : boolean
+    - amorce : boolean
     +Case(int x, int y)
     +faireEffet(Perso p)
     +isTraversable()
@@ -69,6 +69,7 @@ class Labyrinthe{
     +BAS = String
     +GAUCHE : String
     +DROITE : String
+    -caseEffet : List<Case>
     +getSuivant(int x, int y, String action) : int
     +Labyrinthe(String nom)
     +deplacerPerso(String action)
@@ -79,8 +80,7 @@ class Labyrinthe{
      +getPj() : Perso
      +getMonstres(int pos) : Monstre
      +getCase(int x, int y) : Case
-
-
+     +getCeseEffet();
     }
 
 class CaseVide {
