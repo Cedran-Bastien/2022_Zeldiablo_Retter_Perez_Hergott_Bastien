@@ -29,18 +29,19 @@ public class LabyDessin implements DessinJeu {
                 if (c.getType() == Labyrinthe.MUR) {
                     gc.setFill(Color.BLACK);
                     gc.fillRect(i * TAILLE_RECTANGLE, j * TAILLE_RECTANGLE, TAILLE_RECTANGLE, TAILLE_RECTANGLE);
-                } else {
-                        if (c.getType() != Labyrinthe.MUR && labyrinthe.getPj().etrePresent(i, j)) {
-                            gc.setFill(Color.RED);
-                            gc.fillOval(i * TAILLE_RECTANGLE, j * TAILLE_RECTANGLE, TAILLE_RECTANGLE, TAILLE_RECTANGLE);
-                        }else {
-                            if (c.getType() == Labyrinthe.CASEPIEGEE) {
-                        gc.setFill(Color.BEIGE);
-                        gc.fillRect(i * TAILLE_RECTANGLE, j * TAILLE_RECTANGLE, TAILLE_RECTANGLE, TAILLE_RECTANGLE);
-                    }
-                    }
                 }
-
+                else if (c.getType() != Labyrinthe.MUR && labyrinthe.getPj().etrePresent(c)) {
+                    gc.setFill(Color.YELLOW);
+                    gc.fillOval(i * TAILLE_RECTANGLE, j * TAILLE_RECTANGLE, TAILLE_RECTANGLE, TAILLE_RECTANGLE);
+                }
+                else if (c.getType() == Labyrinthe.CASEDECLENCHEUR){
+                    gc.setFill(Color.GRAY);
+                    gc.fillRect(i * TAILLE_RECTANGLE, j * TAILLE_RECTANGLE, TAILLE_RECTANGLE, TAILLE_RECTANGLE);
+                }
+                else if (c.getType() == Labyrinthe.CASEPIEGEE) {
+                    gc.setFill(Color.RED);
+                    gc.fillRect(i * TAILLE_RECTANGLE, j * TAILLE_RECTANGLE, TAILLE_RECTANGLE, TAILLE_RECTANGLE);
+                }
             }
         }
     }

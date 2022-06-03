@@ -1,5 +1,6 @@
 package gameLaby.laby.caseEffet;
 
+import gameLaby.laby.Labyrinthe;
 import gameLaby.laby.Perso;
 
 public class CaseDeclencheur extends Case {
@@ -11,7 +12,7 @@ public class CaseDeclencheur extends Case {
      * @param y
      *      attribut y de la poisition de la case
      */
-    public CaseDeclencheur(int x, int y, char type) {
+    public CaseDeclencheur(int x, int y) {
         super(x, y );
     }
 
@@ -22,5 +23,15 @@ public class CaseDeclencheur extends Case {
      */
     public void faireEffet(Perso p) {
         System.out.println("Case déclenchée");
+    }
+
+    /**
+     *
+     * @return
+     *      'D' caractere correspondant a une case declencheur
+     */
+    @Override
+    public char getType() {
+        return Labyrinthe.CASEDECLENCHEUR;
     }
 }

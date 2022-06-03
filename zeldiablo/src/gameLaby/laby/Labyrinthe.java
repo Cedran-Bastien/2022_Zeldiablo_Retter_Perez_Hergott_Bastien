@@ -22,6 +22,7 @@ public class Labyrinthe {
     public static final char VIDE = '.';
     public static final char CASEDECLENCHEUR = 'D';
     public static final char CASEPIEGEE = 'p';
+    public static final int DEGAT_CASE_PIEGEE = 1;
 
 
     /**
@@ -136,18 +137,18 @@ public class Labyrinthe {
                         this.pj = new Perso(colonne, numeroLigne, Labyrinthe.PV_BASE_PERSO);
                         break;
                     case CASEDECLENCHEUR:
-                        CaseDeclencheur caseDeclencheur = new CaseDeclencheur(colonne, numeroLigne, Labyrinthe.CASEDECLENCHEUR);
+                        CaseDeclencheur caseDeclencheur = new CaseDeclencheur(colonne, numeroLigne);
                         this.cases[colonne][numeroLigne] = caseDeclencheur;
                         this.caseEffet.add(caseDeclencheur);
                         break;
                     case CASEPIEGEE:
-                        CasePiegee casePiegee = new CasePiegee(colonne, numeroLigne, Labyrinthe.CASEPIEGEE, 20);
+                        CasePiegee casePiegee = new CasePiegee(colonne, numeroLigne, Labyrinthe.DEGAT_CASE_PIEGEE);
                         this.cases[colonne][numeroLigne] = casePiegee;
                         this.caseEffet.add(casePiegee);
                         break;
 
                     default:
-                        throw new Error("caractere inconnu " + c);
+                        throw new Error("caractere inconnu : " + c);
                 }
             }
 
@@ -174,8 +175,8 @@ public class Labyrinthe {
         // calcule case suivante
         int[] suivante = getSuivant(courante[0], courante[1], action);
 
-        // si c'est pas un mur, on effectue le deplacement
-        if (this.cases[suivante[0]][suivante[1]].getType() != MUR) {
+        // si la case est traversable (pas un mur), on effectue le deplacement
+        if (this.cases[suivante[0]][suivante[1]].isTraversable()) {
             // on met a jour personnage
             this.pj.setX(suivante[0]);
             this.pj.setY(suivante[1]);

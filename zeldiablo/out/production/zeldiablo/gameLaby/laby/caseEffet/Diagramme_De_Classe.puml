@@ -45,6 +45,7 @@ abstract Case {
     - amorce : boolean
     +Case(int x, int y)
     +faireEffet(Perso p)
+    +getType()
     +isTraversable()
     +isAmorce()
     +changerAmorce()
@@ -65,6 +66,7 @@ class Labyrinthe{
     +DECLENCHEUR : char
     +PIEGEE : char
     +VIDE : char
+    +DEGAT_CASE_PIEGEE : int
     +HAUT = String
     +BAS = String
     +GAUCHE : String
@@ -85,16 +87,20 @@ class Labyrinthe{
 class CaseVide {
     +CaseVide(int x, int y)
     +faireEffet(Perso p)
+    +getType()
 }
 
 class CaseMur {
     +CaseMur(int x, int y)
     +faireEffet(Perso p)
+    +getType()
 }
 
 class CaseDeclencheur {
     +CaseDeclencheur(int x, int y)
     +faireEffet(Perso p)
+    +getType()
+
 
 
 }
@@ -103,6 +109,8 @@ class CasePiegee {
     -degats : int
     +CasePiegee(int x, int y, boolean amorce)
     +faireEffet(Perso p)
+    +getType()
+
 
 
 }
