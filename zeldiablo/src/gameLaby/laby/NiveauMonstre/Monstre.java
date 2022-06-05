@@ -25,7 +25,8 @@ public class Monstre extends Case {
     /**
      * retire les points d attaque au personnage lorsque celui ci active l'effet
      */
-    public void faireEffet(Perso p) {
+    public void faireEffet(Perso p) throws InterruptedException {
+        Thread.sleep(250);
         if ( !p.etreMort()){
             p.subirDegats(this.PointsAttaque);
         }

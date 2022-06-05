@@ -31,7 +31,7 @@ public abstract class Case extends Position {
      * @param p
      *      personnage qui subit l'effet
      */
-    public abstract void faireEffet(Perso p);
+    public abstract void faireEffet(Perso p) throws InterruptedException;
 
     /**
      *

@@ -19,10 +19,10 @@ activate laby
 laby --> labyJeu :CasePieges casepiegee
 deactivate laby
 
-labyJeu ->casedeclancheur : isAmorce()
-activate casedeclancheur
-casedeclancheur --> labyJeu : true
-deactivate casedeclancheur
+labyJeu ->casepiegee : isAmorce()
+activate casepiegee
+casepiegee --> labyJeu : true
+deactivate casepiegee
 
 labyJeu -> casepiegee : faireEffet(perso)
 activate casepiegee
@@ -33,10 +33,10 @@ deactivate perso
 casepiegee --> labyJeu
 deactivate casepiegee
 
-labyJeu -> casedeclancheur : changerAmorce
-activate casedeclancheur
-casedeclancheur --> labyJeu :
-deactivate casedeclancheur
+labyJeu -> casepiegee : changerAmorce
+activate casepiegee
+casepiegee --> labyJeu :
+deactivate casepiegee
 
 labyJeu --> main
 deactivate labyJeu

@@ -25,7 +25,7 @@ public class LabyJeu implements Jeu {
      * @param clavier objet contenant l'état du clavier'
      */
     @Override
-    public void update(double secondes, Clavier clavier) {
+    public void update(double secondes, Clavier clavier) throws InterruptedException {
 
         //deplacé le personnage en fonction des touches
         if (clavier.droite){

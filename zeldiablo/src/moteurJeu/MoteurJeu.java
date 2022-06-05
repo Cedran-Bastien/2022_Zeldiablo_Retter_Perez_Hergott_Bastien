@@ -169,7 +169,11 @@ public class MoteurJeu extends Application {
                 // si le temps ecoule depasse le necessaire pour FPS souhaite
                 if (dureeEnMilliSecondes > dureeFPS) {
                     // met a jour le jeu en passant les touches appuyees
-                    jeu.update(dureeEnMilliSecondes / 1_000., controle);
+                    try {
+                        jeu.update(dureeEnMilliSecondes / 1_000., controle);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
 
                     // dessine le jeu
                     dessin.dessinerJeu(jeu, canvas);

@@ -11,7 +11,7 @@ public interface Jeu {
      * @param secondes temps ecoule depuis la derniere mise a jour
      * @param clavier objet contenant l'état du clavier'
      */
-    void update(double secondes, Clavier clavier);
+    void update(double secondes, Clavier clavier) throws InterruptedException;
 
     /**
      * initialisation du jeu

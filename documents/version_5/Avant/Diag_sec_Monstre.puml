@@ -16,14 +16,19 @@ deactivate perso
 
 labyJeu -> laby : getCase(1,1)
 activate laby
-laby --> labyJeu :CaseDeclancheur casedeclancheur
+laby --> labyJeu :CasePieges monstre
 deactivate laby
 
-labyJeu ->casedeclancheur : isAmorce()
-activate casedeclancheur
-casedeclancheur --> labyJeu : false
-deactivate casedeclancheur
+labyJeu -> monstre : faireEffet(perso)
+activate monstre
+monstre -> perso : perdrePv(monstre.degat)
+activate perso
+perso --> monstre
+deactivate perso
+monstre --> labyJeu
+deactivate monstre
 
 labyJeu --> main
 deactivate labyJeu
+
 @enduml
