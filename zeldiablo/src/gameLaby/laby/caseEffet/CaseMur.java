@@ -1,5 +1,6 @@
 package gameLaby.laby.caseEffet;
 
+import gameLaby.laby.Labyrinthe;
 import gameLaby.laby.Perso;
 
 public class CaseMur extends Case{
@@ -23,5 +24,15 @@ public class CaseMur extends Case{
      */
     @Override
     public void faireEffet(Perso p) {
+    }
+
+    /**
+     *
+     * @return
+     *      'X' caractere correspondant a une case Mur
+     */
+    @Override
+    public char getType() {
+        return Labyrinthe.MUR;
     }
 }

@@ -1,8 +1,9 @@
 package gameLaby.laby.monstre;
 
 import gameLaby.laby.Perso;
+import gameLaby.laby.caseEffet.Case;
 
-public class Monstre extends CaseEffet {
+public class Monstre extends Case {
 
     /**
      * attribut representant les degats a enlever au personnage
@@ -17,7 +18,7 @@ public class Monstre extends CaseEffet {
      * @param ptsAtt
      */
     public Monstre(int x, int y, char p, int ptsAtt) {
-        super(x,y,p);
+        super(x,y);
         this.PointsAttaque = ptsAtt;
     }
 
@@ -28,6 +29,11 @@ public class Monstre extends CaseEffet {
         if (!p.etreMort()) {
             p.subirDegats(this.PointsAttaque);
         }
+    }
+
+    @Override
+    public char getType() {
+        return 0;
     }
 
     /**

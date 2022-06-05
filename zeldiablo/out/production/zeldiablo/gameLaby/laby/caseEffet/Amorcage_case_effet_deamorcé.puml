@@ -22,6 +22,11 @@ activate caseAct
 caseAct --> labyJeu : false
 deactivate caseAct
 
+labyJeu -> case : etrePresent(perso)
+activate case
+case -> labyJeu : false
+deactivate case
+
 labyJeu -> caseAct : changerAmorce()
 activate caseAct
 caseAct --> labyJeu

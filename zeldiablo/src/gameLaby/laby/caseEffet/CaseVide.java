@@ -1,5 +1,6 @@
 package gameLaby.laby.caseEffet;
 
+import gameLaby.laby.Labyrinthe;
 import gameLaby.laby.Perso;
 
 public class CaseVide extends Case{
@@ -22,5 +23,15 @@ public class CaseVide extends Case{
      */
     @Override
     public void faireEffet(Perso p) {
+    }
+
+    /**
+     *
+     * @return
+     *      '.' caractere correspondant a une case vide
+     */
+    @Override
+    public char getType() {
+        return Labyrinthe.VIDE;
     }
 }

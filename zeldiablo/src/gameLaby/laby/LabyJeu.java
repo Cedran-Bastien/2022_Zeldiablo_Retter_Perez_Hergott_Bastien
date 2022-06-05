@@ -30,17 +30,39 @@ public class LabyJeu implements Jeu {
         //deplacé le personnage en fonction des touches
         if (clavier.droite){
             laby.deplacerPerso(Labyrinthe.DROITE);
+            if (!laby.getCase(laby.getPj().getX(),laby.getPj().getY()).isTraversable()){
+                laby.deplacerPerso(Labyrinthe.GAUCHE);
+            }
         }
         if (clavier.gauche){
             laby.deplacerPerso(Labyrinthe.GAUCHE);
+            if (!laby.getCase(laby.getPj().getX(),laby.getPj().getY()).isTraversable()){
+                laby.deplacerPerso(Labyrinthe.DROITE);
+            }
         }
         if (clavier.haut){
             laby.deplacerPerso(Labyrinthe.HAUT);
+            if (!laby.getCase(laby.getPj().getX(),laby.getPj().getY()).isTraversable()){
+                laby.deplacerPerso(Labyrinthe.BAS);
+            }
         }
         if (clavier.bas){
             laby.deplacerPerso(Labyrinthe.BAS);
+            if (!laby.getCase(laby.getPj().getX(),laby.getPj().getY()).isTraversable()){
+                laby.deplacerPerso(Labyrinthe.HAUT);
+            }
         }
-       this.laby.getCase(this.laby.pj.getX(),this.laby.pj.getY()).faireEffet(this.laby.pj);
+        if (this.laby.getCase(this.laby.pj.getX(),this.laby.pj.getY()).isAmorce()){
+            this.laby.getCase(this.laby.pj.getX(),this.laby.pj.getY()).faireEffet(this.laby.pj);
+        }
+        if (true){
+            for (int i=0; i<this.laby.getCaseEffet().size();i++){
+                if ((!this.laby.getCaseEffet().get(i).isAmorce()) && this.laby.getCaseEffet().get(i).etrePresent(this.laby.getPj())){
+                    this.laby.getCaseEffet().get(i).changerAmorce();
+                }
+            }
+        }
+
 
     }
 

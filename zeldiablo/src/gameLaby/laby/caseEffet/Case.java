@@ -23,7 +23,7 @@ public abstract class Case extends Position {
     public Case(int x, int y) {
         super(x,y);
         this.traversable = true;
-        this.amorce = false;
+        this.amorce = true;
     }
 
     /**
@@ -32,6 +32,13 @@ public abstract class Case extends Position {
      *      personnage qui subit l'effet
      */
     public abstract void faireEffet(Perso p);
+
+    /**
+     *
+     * @return
+     *      le caractere correspondant au type de la case
+     */
+    public abstract char getType();
 
     /**
      *
@@ -62,5 +69,6 @@ public abstract class Case extends Position {
     public void changerAmorce(){
         this.amorce = !this.amorce;
     }
+
 
 }

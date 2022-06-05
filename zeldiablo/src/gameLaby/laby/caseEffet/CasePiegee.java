@@ -1,5 +1,6 @@
 package gameLaby.laby.caseEffet;
 
+import gameLaby.laby.Labyrinthe;
 import gameLaby.laby.Perso;
 
 public class CasePiegee extends Case {
@@ -12,13 +13,17 @@ public class CasePiegee extends Case {
      * @param x
      * @param y
      * @param deg
-     * @param typ
      */
-    public CasePiegee(int x, int y,char typ,int deg) {
+    public CasePiegee(int x, int y,int deg) {
         super(x, y);
         this.degat=deg;
     }
 
+    /**
+     * Blesse un personnage de l'attribut "degat" PV
+     * @param p
+     *      le personnage subissane les degats
+     */
     public void faireEffet(Perso p) {
         if ( !p.etreMort()){
             p.subirDegats(this.degat);
@@ -27,10 +32,12 @@ public class CasePiegee extends Case {
     }
 
     /**
-     * permet de savoir les dégâts de la gameLaby.laby.case
+     *
      * @return
+     *      'p' caractere correspondant a une case piegée
      */
-    public int getDegat() {
-        return degat;
+    @Override
+    public char getType() {
+        return Labyrinthe.CASEPIEGEE;
     }
 }
