@@ -37,7 +37,7 @@ public class LabyDessin implements DessinJeu {
                     gc.fillOval(i * TAILLE_RECTANGLE, j * TAILLE_RECTANGLE, TAILLE_RECTANGLE, TAILLE_RECTANGLE);
                 }
                 else if (c.getType() == Labyrinthe.CASEDECLENCHEUR){
-                    gc.setFill(Color.GRAY);
+                    gc.setFill(Color.WHITE);
                     gc.fillRect(i * TAILLE_RECTANGLE, j * TAILLE_RECTANGLE, TAILLE_RECTANGLE, TAILLE_RECTANGLE);
                 }
                 else if (c.getType() == Labyrinthe.CASEPIEGEE) {

@@ -17,6 +17,4 @@ public interface DessinJeu {
      * @param canvas canvas dans lequel dessiner l'etat du jeu
      */
     void dessinerJeu(Jeu jeu, Canvas canvas);
-
-    void dessinerJeu(Jeu jeu, Canvas canvas);
 }
