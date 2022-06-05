@@ -2,6 +2,8 @@ package moteurJeu;
 
 import javafx.scene.canvas.Canvas;
 
+import java.awt.*;
+
 
 /**
  * interface pour afficher le jeu
@@ -16,4 +18,5 @@ public interface DessinJeu {
      */
     void dessinerJeu(Jeu jeu, Canvas canvas);
 
+    void dessinerJeu(Jeu jeu, Canvas canvas);
 }

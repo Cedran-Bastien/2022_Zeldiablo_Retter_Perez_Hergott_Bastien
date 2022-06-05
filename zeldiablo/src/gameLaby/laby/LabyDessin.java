@@ -7,6 +7,8 @@ import javafx.scene.paint.Color;
 import moteurJeu.DessinJeu;
 import moteurJeu.Jeu;
 
+import java.awt.*;
+
 public class LabyDessin implements DessinJeu {
     public static final int TAILLE_RECTANGLE = 30;
 

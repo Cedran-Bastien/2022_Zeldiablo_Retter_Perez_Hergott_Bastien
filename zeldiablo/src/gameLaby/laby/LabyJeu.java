@@ -1,6 +1,5 @@
 package gameLaby.laby;
 
-import com.sun.scenario.effect.impl.sw.java.JSWBlend_SOFT_LIGHTPeer;
 import moteurJeu.Clavier;
 import moteurJeu.Jeu;
 
@@ -57,12 +56,9 @@ public class LabyJeu implements Jeu {
             this.laby.getCase(this.laby.pj.getX(),this.laby.pj.getY()).faireEffet(this.laby.pj);
         }
         if (true){
-            System.out.println("if" );
-            for (int i=0; i>this.laby.getCaseEffet().size();i++){
-                System.out.println("boucle");
+            for (int i=0; i<this.laby.getCaseEffet().size();i++){
                 if ((!this.laby.getCaseEffet().get(i).isAmorce()) && this.laby.getCaseEffet().get(i).etrePresent(this.laby.getPj())){
                     this.laby.getCaseEffet().get(i).changerAmorce();
-                    System.out.println("changement amorce");
                 }
             }
         }
