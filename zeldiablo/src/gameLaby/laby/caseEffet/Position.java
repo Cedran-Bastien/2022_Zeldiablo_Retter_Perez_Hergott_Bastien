@@ -1,7 +1,5 @@
 package gameLaby.laby.caseEffet;
 
-import gameLaby.laby.Perso;
-
 public class Position {
     private int x,y;
 
