@@ -1,5 +1,6 @@
 package gameLaby.laby;
 
+import gameLaby.laby.NiveauMonstre.Monstre;
 import gameLaby.laby.caseEffet.*;
 
 import java.io.BufferedReader;
@@ -22,6 +23,7 @@ public class Labyrinthe {
     public static final char VIDE = '.';
     public static final char CASEDECLENCHEUR = 'D';
     public static final char CASEPIEGEE = 'p';
+    public static final char MONSTRE='M';
     public static final int DEGAT_CASE_PIEGEE = 1;
 
 
@@ -145,6 +147,11 @@ public class Labyrinthe {
                         CasePiegee casePiegee = new CasePiegee(colonne, numeroLigne, Labyrinthe.DEGAT_CASE_PIEGEE);
                         this.cases[colonne][numeroLigne] = casePiegee;
                         this.caseEffet.add(casePiegee);
+                        break;
+                    case MONSTRE:
+                        Monstre monstre = new Monstre(colonne,numeroLigne,Labyrinthe.DEGAT_CASE_PIEGEE);
+                        this.cases[colonne][numeroLigne] = monstre;
+                        this.caseEffet.add(monstre);
                         break;
 
                     default:

@@ -54,7 +54,9 @@ public class LabyJeu implements Jeu {
         }
         if (this.laby.getCase(this.laby.pj.getX(),this.laby.pj.getY()).isAmorce()){
             this.laby.getCase(this.laby.pj.getX(),this.laby.pj.getY()).faireEffet(this.laby.pj);
-            this.laby.getCase(this.laby.pj.getX(),this.laby.pj.getY()).changerAmorce();
+            if (this.laby.getCase(this.laby.pj.getX(),this.laby.pj.getY()).getType() != 'M'){
+                this.laby.getCase(this.laby.pj.getX(),this.laby.pj.getY()).changerAmorce();
+            }
         }
         if (true){
             for (int i=0; i<this.laby.getCaseEffet().size();i++){
