@@ -1,26 +1,4 @@
 Fonctionnalité choisie:
-
-	- Génération de monstres immobiles
-		Au lancement du jeu, le jeu ajoute diérents monstres dans l'environnement. Les
-		monstres restent immobiles.
-	  Critères de validation
-		• Il est possible de construire un labyrinthe par défaut contenant quelques monstres
-		(le labyrinthe par défaut est à dénir).
-		• Les monstres sont créés sur des cases vides.
-		• Il n'est pas possible de générer des monstres sur des cases non vides (position du
-		joueur, d'autres monstres ou de murs)
-		• Les monstres doivent apparaitre dans l'interface graphique sous la forme d'un
-		cercle rouge.
-		• Les monstres ne se déplacent pas (mais attaquent éventuellement le héros s'il passe
-		à proximité - cf taches attaque dans les parties suivantes).
-
-	- Gestion des niveaux
-		Le jeu est constitué de plusieurs niveaux.
-	  Critères de validation
-		• Un niveau décrit le labyrinthe et les monstres qui y sont contenus.
-		• Il est possible de choisir le niveau à lancer au démarrage de l'application (en
-		modifiant la chaine de caractère passée dans le main).
-		• Testez en ajoutant un second niveau à dénir au préalable.
 	
 	- Cases déclencheur
 		Lorsque une entité arrive sur certaines cases, ces cases déclenchent un eet.

@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>gameLaby.laby</OriginalElement>
+  <nodes>
+    <node x="92.62277253668776" y="787.5">gameLaby.laby.CaseDeclencheur</node>
+    <node x="370.68527253668776" y="1980.0">gameLaby.laby.MainJeu</node>
+    <node x="549.7477725366878" y="962.0">gameLaby.laby.Labyrinthe</node>
+    <node x="476.62277253668776" y="787.5">gameLaby.laby.CaseVide</node>
+    <node x="655.6227725366878" y="776.0">gameLaby.laby.CasePiegee</node>
+    <node x="1115.1227725366878" y="0.0">gameLaby.laby.monstre</node>
+    <node x="277.43527253668776" y="1828.0">gameLaby.laby.LabyDessin</node>
+    <node x="297.62277253668776" y="787.5">gameLaby.laby.CaseMur</node>
+    <node x="336.4924004192875" y="0.0">gameLaby.laby.Position</node>
+    <node x="240.43527253668773" y="1642.5">gameLaby.laby.Main</node>
+    <node x="517.6227725366878" y="1598.0">gameLaby.laby.LabyJeu</node>
+    <node x="917.1227725366878" y="0.0">gameLaby.laby.caseEffet</node>
+    <node x="461.2480345911956" y="470.0">gameLaby.laby.Case</node>
+    <node x="694.25" y="272.0">gameLaby.laby.Perso</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="gameLaby.laby.CasePiegee" target="gameLaby.laby.Perso" relationship="DEPENDENCY">
+      <point x="43.5" y="-61.0" />
+      <point x="786.1227725366878" y="754.0" />
+      <point x="747.6227725366878" y="754.0" />
+      <point x="747.6227725366878" y="448.0" />
+      <point x="524.125262054508" y="448.0" />
+      <point x="524.125262054508" y="438.0" />
+      <point x="720.75" y="438.0" />
+      <point x="-53.0" y="72.0" />
+    </edge>
+    <edge source="gameLaby.laby.Case" target="gameLaby.laby.Perso" relationship="DEPENDENCY">
+      <point x="46.25" y="-116.0" />
+      <point x="599.9980345911956" y="448.0" />
+      <point x="524.125262054508" y="448.0" />
+      <point x="524.125262054508" y="438.0" />
+      <point x="720.75" y="438.0" />
+      <point x="-53.0" y="72.0" />
+    </edge>
+    <edge source="gameLaby.laby.CaseMur" target="gameLaby.laby.Case" relationship="GENERALIZATION">
+      <point x="39.75" y="-49.5" />
+      <point x="416.87277253668776" y="754.0" />
+      <point x="530.6230345911956" y="754.0" />
+      <point x="-23.125" y="116.0" />
+    </edge>
+    <edge source="gameLaby.laby.LabyDessin" target="gameLaby.laby.LabyJeu" relationship="DEPENDENCY">
+      <point x="0.0" y="-50.0" />
+      <point x="379.43527253668776" y="1796.0" />
+      <point x="617.1227725366878" y="1796.0" />
+      <point x="0.0" y="83.0" />
+    </edge>
+    <edge source="gameLaby.laby.LabyDessin" target="gameLaby.laby.Labyrinthe" relationship="DEPENDENCY">
+      <point x="0.0" y="-50.0" />
+      <point x="379.43527253668776" y="1796.0" />
+      <point x="727.1227725366878" y="1796.0" />
+      <point x="727.1227725366878" y="1576.0" />
+      <point x="737.8727725366878" y="1576.0" />
+      <point x="737.8727725366878" y="1566.0" />
+      <point x="736.1227725366878" y="1566.0" />
+      <point x="79.875" y="281.0" />
+    </edge>
+    <edge source="gameLaby.laby.LabyJeu" target="gameLaby.laby.Position" relationship="DEPENDENCY">
+      <point x="-66.33333333333331" y="-83.0" />
+      <point x="550.7894392033544" y="1576.0" />
+      <point x="82.12277253668776" y="1576.0" />
+      <point x="82.12277253668776" y="251.0" />
+      <point x="47.99777253668776" y="251.0" />
+      <point x="47.99777253668776" y="241.0" />
+      <point x="438.9924004192875" y="241.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="gameLaby.laby.CaseDeclencheur" target="gameLaby.laby.Labyrinthe" relationship="DEPENDENCY">
+      <point x="-46.25" y="49.5" />
+      <point x="138.87277253668776" y="930.0" />
+      <point x="372.12277253668776" y="930.0" />
+      <point x="372.12277253668776" y="940.0" />
+      <point x="585.2477725366878" y="940.0" />
+      <point x="-71.0" y="-281.0" />
+    </edge>
+    <edge source="gameLaby.laby.Labyrinthe" target="gameLaby.laby.Case" relationship="TO_ONE">
+      <point x="71.0" y="-281.0" />
+      <point x="727.2477725366878" y="940.0" />
+      <point x="866.8727725366878" y="940.0" />
+      <point x="866.8727725366878" y="930.0" />
+      <point x="861.6227725366878" y="930.0" />
+      <point x="861.6227725366878" y="724.0" />
+      <point x="623.1230345911956" y="724.0" />
+      <point x="69.375" y="116.0" />
+    </edge>
+    <edge source="gameLaby.laby.Main" target="gameLaby.laby.Case" relationship="DEPENDENCY">
+      <point x="-37.25" y="-38.5" />
+      <point x="277.68527253668776" y="1556.0" />
+      <point x="10.5" y="1556.0" />
+      <point x="10.5" y="734.0" />
+      <point x="484.3730345911956" y="734.0" />
+      <point x="-69.375" y="116.0" />
+    </edge>
+    <edge source="gameLaby.laby.LabyDessin" target="gameLaby.laby.Case" relationship="DEPENDENCY">
+      <point x="0.0" y="-50.0" />
+      <point x="379.43527253668776" y="1796.0" />
+      <point x="0.0" y="1796.0" />
+      <point x="0.0" y="754.0" />
+      <point x="10.5" y="754.0" />
+      <point x="10.5" y="734.0" />
+      <point x="484.3730345911956" y="734.0" />
+      <point x="-69.375" y="116.0" />
+    </edge>
+    <edge source="gameLaby.laby.Labyrinthe" target="gameLaby.laby.Case" relationship="TO_MANY">
+      <point x="71.0" y="-281.0" />
+      <point x="727.2477725366878" y="940.0" />
+      <point x="866.8727725366878" y="940.0" />
+      <point x="866.8727725366878" y="930.0" />
+      <point x="861.6227725366878" y="930.0" />
+      <point x="861.6227725366878" y="724.0" />
+      <point x="623.1230345911956" y="724.0" />
+      <point x="69.375" y="116.0" />
+    </edge>
+    <edge source="gameLaby.laby.CaseVide" target="gameLaby.laby.Case" relationship="GENERALIZATION">
+      <point x="-39.75" y="-49.5" />
+      <point x="516.3727725366878" y="754.0" />
+      <point x="530.6230345911956" y="754.0" />
+      <point x="-23.125" y="116.0" />
+    </edge>
+    <edge source="gameLaby.laby.LabyJeu" target="gameLaby.laby.Labyrinthe" relationship="TO_ONE">
+      <point x="66.33333333333331" y="-83.0" />
+      <point x="26.625" y="281.0" />
+    </edge>
+    <edge source="gameLaby.laby.CaseMur" target="gameLaby.laby.Perso" relationship="DEPENDENCY">
+      <point x="-39.75" y="-49.5" />
+      <point x="337.37277253668776" y="744.0" />
+      <point x="279.37277253668776" y="744.0" />
+      <point x="279.37277253668776" y="448.0" />
+      <point x="524.125262054508" y="448.0" />
+      <point x="524.125262054508" y="438.0" />
+      <point x="720.75" y="438.0" />
+      <point x="-53.0" y="72.0" />
+    </edge>
+    <edge source="gameLaby.laby.CaseDeclencheur" target="gameLaby.laby.Case" relationship="GENERALIZATION">
+      <point x="46.25" y="-49.5" />
+      <point x="231.37277253668776" y="754.0" />
+      <point x="530.6230345911956" y="754.0" />
+      <point x="-23.125" y="116.0" />
+    </edge>
+    <edge source="gameLaby.laby.MainJeu" target="gameLaby.laby.Labyrinthe" relationship="DEPENDENCY">
+      <point x="37.25" y="-38.5" />
+      <point x="482.43527253668776" y="1959.0" />
+      <point x="748.6227725366878" y="1959.0" />
+      <point x="748.6227725366878" y="1576.0" />
+      <point x="737.8727725366878" y="1576.0" />
+      <point x="737.8727725366878" y="1566.0" />
+      <point x="736.1227725366878" y="1566.0" />
+      <point x="79.875" y="281.0" />
+    </edge>
+    <edge source="gameLaby.laby.Labyrinthe" target="gameLaby.laby.CaseVide" relationship="CREATE">
+      <point x="0.0" y="-281.0" />
+      <point x="656.2477725366878" y="920.0" />
+      <point x="595.8727725366878" y="920.0" />
+      <point x="39.75" y="49.5" />
+    </edge>
+    <edge source="gameLaby.laby.Labyrinthe" target="gameLaby.laby.CaseDeclencheur" relationship="CREATE">
+      <point x="0.0" y="-281.0" />
+      <point x="656.2477725366878" y="920.0" />
+      <point x="231.37277253668773" y="920.0" />
+      <point x="46.25" y="49.5" />
+    </edge>
+    <edge source="gameLaby.laby.MainJeu" target="gameLaby.laby.LabyDessin" relationship="CREATE">
+      <point x="-37.25" y="-38.5" />
+      <point x="407.93527253668776" y="1959.0" />
+      <point x="439.68527253668776" y="1959.0" />
+      <point x="439.68527253668776" y="1949.0" />
+      <point x="379.43527253668776" y="1949.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="gameLaby.laby.LabyDessin" target="gameLaby.laby.Position" relationship="DEPENDENCY">
+      <point x="0.0" y="-50.0" />
+      <point x="379.43527253668776" y="1796.0" />
+      <point x="0.0" y="1796.0" />
+      <point x="0.0" y="251.0" />
+      <point x="47.99777253668776" y="251.0" />
+      <point x="47.99777253668776" y="241.0" />
+      <point x="438.9924004192875" y="241.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="gameLaby.laby.Labyrinthe" target="gameLaby.laby.Case" relationship="CREATE">
+      <point x="0.0" y="-281.0" />
+      <point x="656.2477725366878" y="920.0" />
+      <point x="840.1227725366878" y="920.0" />
+      <point x="840.1227725366878" y="734.0" />
+      <point x="576.8730345911956" y="734.0" />
+      <point x="23.125" y="116.0" />
+    </edge>
+    <edge source="gameLaby.laby.CaseMur" target="gameLaby.laby.Labyrinthe" relationship="DEPENDENCY">
+      <point x="-39.75" y="49.5" />
+      <point x="337.37277253668776" y="930.0" />
+      <point x="372.12277253668776" y="930.0" />
+      <point x="372.12277253668776" y="940.0" />
+      <point x="585.2477725366878" y="940.0" />
+      <point x="-71.0" y="-281.0" />
+    </edge>
+    <edge source="gameLaby.laby.Main" target="gameLaby.laby.Labyrinthe" relationship="CREATE">
+      <point x="37.25" y="-38.5" />
+      <point x="352.18527253668776" y="1566.0" />
+      <point x="617.1227725366878" y="1566.0" />
+      <point x="617.1227725366878" y="1556.0" />
+      <point x="629.6227725366878" y="1556.0" />
+      <point x="-26.625" y="281.0" />
+    </edge>
+    <edge source="gameLaby.laby.Perso" target="gameLaby.laby.Position" relationship="GENERALIZATION">
+      <point x="0.0" y="-72.0" />
+      <point x="773.75" y="251.0" />
+      <point x="662.1590670859541" y="251.0" />
+      <point x="662.1590670859541" y="241.0" />
+      <point x="507.32573375262075" y="241.0" />
+      <point x="68.33333333333326" y="105.0" />
+    </edge>
+    <edge source="gameLaby.laby.CaseVide" target="gameLaby.laby.Labyrinthe" relationship="DEPENDENCY">
+      <point x="-39.75" y="49.5" />
+      <point x="516.3727725366878" y="930.0" />
+      <point x="372.12277253668776" y="930.0" />
+      <point x="372.12277253668776" y="940.0" />
+      <point x="585.2477725366878" y="940.0" />
+      <point x="-71.0" y="-281.0" />
+    </edge>
+    <edge source="gameLaby.laby.Case" target="gameLaby.laby.Position" relationship="GENERALIZATION">
+      <point x="-46.25" y="-116.0" />
+      <point x="507.4980345911956" y="438.0" />
+      <point x="513.625262054508" y="438.0" />
+      <point x="513.625262054508" y="251.0" />
+      <point x="662.1590670859541" y="251.0" />
+      <point x="662.1590670859541" y="241.0" />
+      <point x="507.32573375262075" y="241.0" />
+      <point x="68.33333333333326" y="105.0" />
+    </edge>
+    <edge source="gameLaby.laby.Position" target="gameLaby.laby.Position" relationship="DEPENDENCY">
+      <point x="-68.33333333333333" y="105.0" />
+      <point x="370.6590670859542" y="230.0" />
+      <point x="316.4924004192875" y="230.0" />
+      <point x="316.4924004192875" y="105.0" />
+      <point x="-102.5" y="-0.0" />
+    </edge>
+    <edge source="gameLaby.laby.Labyrinthe" target="gameLaby.laby.Labyrinthe" relationship="DEPENDENCY">
+      <point x="-79.875" y="281.0" />
+      <point x="576.3727725366878" y="1544.0" />
+      <point x="529.7477725366878" y="1544.0" />
+      <point x="529.7477725366878" y="1243.0" />
+      <point x="-106.5" y="-0.0" />
+    </edge>
+    <edge source="gameLaby.laby.LabyJeu" target="gameLaby.laby.LabyJeu" relationship="DEPENDENCY">
+      <point x="-66.33333333333334" y="83.0" />
+      <point x="550.7894392033544" y="1784.0" />
+      <point x="497.62277253668776" y="1784.0" />
+      <point x="497.62277253668776" y="1681.0" />
+      <point x="-99.5" y="-0.0" />
+    </edge>
+    <edge source="gameLaby.laby.Labyrinthe" target="gameLaby.laby.Perso" relationship="CREATE">
+      <point x="0.0" y="-281.0" />
+      <point x="656.2477725366878" y="920.0" />
+      <point x="850.6227725366878" y="920.0" />
+      <point x="850.6227725366878" y="448.0" />
+      <point x="773.75" y="448.0" />
+      <point x="0.0" y="72.0" />
+    </edge>
+    <edge source="gameLaby.laby.CasePiegee" target="gameLaby.laby.Labyrinthe" relationship="DEPENDENCY">
+      <point x="-43.5" y="61.0" />
+      <point x="699.1227725366878" y="930.0" />
+      <point x="372.12277253668776" y="930.0" />
+      <point x="372.12277253668776" y="940.0" />
+      <point x="585.2477725366878" y="940.0" />
+      <point x="-71.0" y="-281.0" />
+    </edge>
+    <edge source="gameLaby.laby.LabyJeu" target="gameLaby.laby.Labyrinthe" relationship="CREATE">
+      <point x="1.4210854715202004E-14" y="-83.0" />
+      <point x="617.1227725366878" y="1556.0" />
+      <point x="629.6227725366878" y="1556.0" />
+      <point x="-26.625" y="281.0" />
+    </edge>
+    <edge source="gameLaby.laby.Labyrinthe" target="gameLaby.laby.CaseMur" relationship="CREATE">
+      <point x="0.0" y="-281.0" />
+      <point x="656.2477725366878" y="920.0" />
+      <point x="416.87277253668776" y="920.0" />
+      <point x="39.75" y="49.5" />
+    </edge>
+    <edge source="gameLaby.laby.LabyJeu" target="gameLaby.laby.Case" relationship="DEPENDENCY">
+      <point x="-66.33333333333331" y="-83.0" />
+      <point x="550.7894392033544" y="1576.0" />
+      <point x="82.12277253668776" y="1576.0" />
+      <point x="82.12277253668776" y="1566.0" />
+      <point x="78.8389675052415" y="1566.0" />
+      <point x="78.8389675052415" y="754.0" />
+      <point x="10.5" y="754.0" />
+      <point x="10.5" y="734.0" />
+      <point x="484.3730345911956" y="734.0" />
+      <point x="-69.375" y="116.0" />
+    </edge>
+    <edge source="gameLaby.laby.MainJeu" target="gameLaby.laby.LabyJeu" relationship="CREATE">
+      <point x="-37.25" y="-38.5" />
+      <point x="407.93527253668776" y="1959.0" />
+      <point x="439.68527253668776" y="1959.0" />
+      <point x="439.68527253668776" y="1949.0" />
+      <point x="737.6227725366878" y="1949.0" />
+      <point x="737.6227725366878" y="1806.0" />
+      <point x="683.456105870021" y="1806.0" />
+      <point x="66.33333333333331" y="83.0" />
+    </edge>
+    <edge source="gameLaby.laby.Labyrinthe" target="gameLaby.laby.Perso" relationship="TO_ONE">
+      <point x="71.0" y="-281.0" />
+      <point x="727.2477725366878" y="940.0" />
+      <point x="866.8727725366878" y="940.0" />
+      <point x="866.8727725366878" y="930.0" />
+      <point x="872.1227725366878" y="930.0" />
+      <point x="872.1227725366878" y="438.0" />
+      <point x="826.75" y="438.0" />
+      <point x="53.0" y="72.0" />
+    </edge>
+    <edge source="gameLaby.laby.CasePiegee" target="gameLaby.laby.Case" relationship="GENERALIZATION">
+      <point x="-43.5" y="-61.0" />
+      <point x="699.1227725366878" y="754.0" />
+      <point x="530.6230345911956" y="754.0" />
+      <point x="-23.125" y="116.0" />
+    </edge>
+    <edge source="gameLaby.laby.CaseVide" target="gameLaby.laby.Perso" relationship="DEPENDENCY">
+      <point x="39.75" y="-49.5" />
+      <point x="595.8727725366878" y="744.0" />
+      <point x="656.7480345911956" y="744.0" />
+      <point x="656.7480345911956" y="448.0" />
+      <point x="524.125262054508" y="448.0" />
+      <point x="524.125262054508" y="438.0" />
+      <point x="720.75" y="438.0" />
+      <point x="-53.0" y="72.0" />
+    </edge>
+    <edge source="gameLaby.laby.CaseDeclencheur" target="gameLaby.laby.Perso" relationship="DEPENDENCY">
+      <point x="-46.25" y="-49.5" />
+      <point x="138.87277253668776" y="754.0" />
+      <point x="175.12277253668773" y="754.0" />
+      <point x="175.12277253668773" y="448.0" />
+      <point x="524.125262054508" y="448.0" />
+      <point x="524.125262054508" y="438.0" />
+      <point x="720.75" y="438.0" />
+      <point x="-53.0" y="72.0" />
+    </edge>
+    <edge source="gameLaby.laby.Labyrinthe" target="gameLaby.laby.Position" relationship="DEPENDENCY">
+      <point x="-71.0" y="-281.0" />
+      <point x="585.2477725366878" y="940.0" />
+      <point x="372.12277253668776" y="940.0" />
+      <point x="372.12277253668776" y="930.0" />
+      <point x="82.12277253668776" y="930.0" />
+      <point x="82.12277253668776" y="251.0" />
+      <point x="47.99777253668776" y="251.0" />
+      <point x="47.99777253668776" y="241.0" />
+      <point x="438.9924004192875" y="241.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="gameLaby.laby.Labyrinthe" target="gameLaby.laby.CasePiegee" relationship="CREATE">
+      <point x="0.0" y="-281.0" />
+      <point x="656.2477725366878" y="920.0" />
+      <point x="786.1227725366878" y="920.0" />
+      <point x="43.5" y="61.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.8717621569571499" showDependencies="true" x="642.6509365668846" y="492.4306188385386" />
+  <SelectedNodes>
+    <node>gameLaby.laby.caseEffet</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
