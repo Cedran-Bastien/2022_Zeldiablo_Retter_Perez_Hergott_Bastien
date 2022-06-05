@@ -1,7 +1,7 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-title Diagramme gameLaby
+title Diagramme avec gestion des niveaux
 
 interface Jeu {
     +update(double secondes, Clavier clavier)
@@ -22,7 +22,7 @@ class LabyDessin{
 
 class LabyJeu{
     -laby : Labyrinthe
-    +LabyJeu()
+    +LabyJeu(String nom)
     +update(double secondes, Clavier clavier)
     +init
     +etreFini : boolean
@@ -33,7 +33,7 @@ class Position{
     -x : int
     -y : int
     +Position(int dx, int dy)
-    +etrePresent(int dx, int dy) : boolean
+    +etrePresent(Position p) : boolean
     +getX() : int
     +getY() : int
     +setX()
@@ -41,10 +41,12 @@ class Position{
     }
 
 abstract Case {
-    - type : char
+    + TYPE : char
+    + TRAVERSABLE : boolean
     +Case(int x, int y, char type)
     +faireEffet(Perso p)
     +getType() : char
+    +isTraversable()
 
     }
 
