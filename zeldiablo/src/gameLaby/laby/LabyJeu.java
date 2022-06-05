@@ -15,8 +15,8 @@ public class LabyJeu implements Jeu {
      */
     private Labyrinthe laby;
 
-    public LabyJeu() throws IOException {
-        this.laby = new Labyrinthe("labySimple/laby2.txt");
+    public LabyJeu(String nom) throws IOException {
+        this.laby = new Labyrinthe(nom);
     }
 
     /**
